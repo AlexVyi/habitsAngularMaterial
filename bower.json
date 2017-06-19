@@ -1,0 +1,29 @@
+{
+  "name": "HabitsFormerAngularMaterial",
+  "authors": [
+    "AlexVyi <alexandru@epk.ro>"
+  ],
+  "description": "some awesome habit",
+  "main": "index.html",
+  "keywords": [
+    "qw"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Plugins",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.1.4",
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angularfire": "^2.3.0",
+    "jquery": "^3.2.1"
+  }
+}

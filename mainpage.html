@@ -1,0 +1,60 @@
+
+
+
+          <h6 class="hidden-xs hidden-sm">Level: {{user.level}}</h6>
+          <h6 class="hidden-md hidden-lg">Level: {{user.level}}</h6>
+
+          <div>
+            <h6>{{user.points}}/{{GetFibbonacci(user.level)*1000}}</h6>
+            <h6>{{user.points}}/5000</h6>
+            <span onclick="openNav()" >
+              <i aria-hidden="true"></i>
+              <i aria-hidden="true"></i>
+            </span>
+          </div>
+
+        <div class="tab Home" ng-model="user" onclick="closeNav()">
+          <div>
+            <h1>Hi {{user.userName}}, let's get shit done!</h1>
+          </div>
+
+        </div>
+        <div class="row tab AddGoals" onclick="closeNav()">
+
+          <div class="col-xs-10">
+            <h2>Add Goal</h2>
+            <form id="AddGoal">
+              <div class="inputGroup">
+                <h6>Type:</h6>
+                <select ng-model="newGoal.goalType" ng-init="newGoal.goalType = 'Dont'">
+                  <option value="Dont">Dont</option>
+                  <option value="Daily">Daily</option>
+                  <option value="Weekly">Weekly</option>
+                  <option value="Monthly">Monthly</option>
+                </select>
+              </div>
+              <div class="inputGroup">
+                <h6>Title:</h6>
+                <input type="text" ng-model="newGoal.title" maxlength="50">
+              </div>
+              <div class="inputGroup" ng-model="newGoal" ng-hide="newGoal.goalType !== 'Dont'">
+                <h6>Points:</h6>
+                <input type="number" ng-model="newGoal.points" max="-500" step="1" min="-1000000">
+              </div>
+              <div class="inputGroup" ng-model="newGoal" ng-hide="newGoal.goalType == 'Dont'">
+                <h6>Repeats:</h6>
+                <input type="number" ng-model="newGoal.repeats" min="0" max="10000" step="1">
+              </div>
+              <div class="inputGroup">
+                <h6 style="vertical-align:center;" >Description:</h6>
+                <textarea rows="4" type="text" ng-model="newGoal.description" maxlength="500"></textarea>
+              </div>
+              <button ng-click="AddGoal()">Commit to goal</button>
+            </form>
+          </div>
+        </div>
+        <button class="tab ManageGoals" onclick="closeNav()">ManageGoals</button>
+        <button class="tab Account" onclick="closeNav()">Account</button>
+          <button class="tab AboutUs" onclick="closeNav()">AboutUs</button>
+
+
