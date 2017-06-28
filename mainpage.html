@@ -1,60 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="habits">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Habits Former</title>
+    <link rel="stylesheet" href="Plugins/angular-material/angular-material.css">
+    <link rel="stylesheet" type="text/css" href="Plugins/sweetalert-master/dist/sweetalert.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body ng-controller="mainController">
+
+  <section  ng-controller="tabController as tab">
+          <button ng-class="{active:tab.isSelected('Home')}">
+              <a href ng-click="tab.selectedTab('Home')" >Home</a>
+          </button>
+        <button ng-class="{active:tab.isSelected('FAQ')}">
+            <a href ng-click="tab.selectedTab('FAQ')" >FAQ</a>
+        </button>
+        <button ng-class="{active:isSelected('Account')}">
+            <a href ng-click="tab.selectedTab('Account')">Account</a>
+        </button>
+        <button ng-class="{active:tab.isSelected('AddGoals')}">
+            <a href ng-click="tab.selectedTab('AddGoals')" >Add goals</a>
+        </button>
+
+         <button id="logout">
+             <a href ng-click="Logout()">Log out</a>
+         </button>
 
 
 
-          <h6 class="hidden-xs hidden-sm">Level: {{user.level}}</h6>
-          <h6 class="hidden-md hidden-lg">Level: {{user.level}}</h6>
 
-          <div>
-            <h6>{{user.points}}/{{GetFibbonacci(user.level)*1000}}</h6>
-            <h6>{{user.points}}/5000</h6>
-            <span onclick="openNav()" >
-              <i aria-hidden="true"></i>
-              <i aria-hidden="true"></i>
-            </span>
-          </div>
+      <div ng-show="tab.isSelected('Home')">
+          <home ng-controller="mainController"></home>
+      </div>
+      <div  ng-show="tab.isSelected('Account')">
+          <account ng-controller="mainController"></account>
+      </div>
 
-        <div class="tab Home" ng-model="user" onclick="closeNav()">
-          <div>
-            <h1>Hi {{user.userName}}, let's get shit done!</h1>
-          </div>
+      <div ng-show="tab.isSelected('AddGoals')">
+          <addgoals ng-controller="mainController"></addgoals>
+      </div>
+      <div ng-show="tab.isSelected('FAQ')">
+          <faq ng-controller="mainController"></faq>
+      </div>
 
-        </div>
-        <div class="row tab AddGoals" onclick="closeNav()">
 
-          <div class="col-xs-10">
-            <h2>Add Goal</h2>
-            <form id="AddGoal">
-              <div class="inputGroup">
-                <h6>Type:</h6>
-                <select ng-model="newGoal.goalType" ng-init="newGoal.goalType = 'Dont'">
-                  <option value="Dont">Dont</option>
-                  <option value="Daily">Daily</option>
-                  <option value="Weekly">Weekly</option>
-                  <option value="Monthly">Monthly</option>
-                </select>
-              </div>
-              <div class="inputGroup">
-                <h6>Title:</h6>
-                <input type="text" ng-model="newGoal.title" maxlength="50">
-              </div>
-              <div class="inputGroup" ng-model="newGoal" ng-hide="newGoal.goalType !== 'Dont'">
-                <h6>Points:</h6>
-                <input type="number" ng-model="newGoal.points" max="-500" step="1" min="-1000000">
-              </div>
-              <div class="inputGroup" ng-model="newGoal" ng-hide="newGoal.goalType == 'Dont'">
-                <h6>Repeats:</h6>
-                <input type="number" ng-model="newGoal.repeats" min="0" max="10000" step="1">
-              </div>
-              <div class="inputGroup">
-                <h6 style="vertical-align:center;" >Description:</h6>
-                <textarea rows="4" type="text" ng-model="newGoal.description" maxlength="500"></textarea>
-              </div>
-              <button ng-click="AddGoal()">Commit to goal</button>
-            </form>
-          </div>
-        </div>
-        <button class="tab ManageGoals" onclick="closeNav()">ManageGoals</button>
-        <button class="tab Account" onclick="closeNav()">Account</button>
-          <button class="tab AboutUs" onclick="closeNav()">AboutUs</button>
+  </section>
 
+  <div ng-show="user.onHoliday">
+      <userholiday ng-controller="mainController"></userholiday>
+  </div>
+
+
+
+
+
+
+
+
+  <script src="Plugins/angular/angular.min.js"></script>
+  <script src="Plugins/jquery/dist/jquery.min.js"></script>
+  <script src="Plugins/angular-route/angular-route.min.js"></script>
+  <script src="Plugins/firebase/firebase.js"></script>
+  <script src="Plugins/angularfire/dist/angularfire.min.js"></script>
+  <script src="Plugins/angular-animate/angular-animate.min.js"></script>
+  <script src="Plugins/angular-aria/angular-aria.min.js"></script>
+  <script src="Plugins/angular-material/angular-material.min.js"></script>
+  <script src="Plugins/sweetalert-master/dist/sweetalert.min.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/mainfunctions.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/data.js"></script>
+  <script>
+      //Initialize Firebase
+      var config = {
+          apiKey: "AIzaSyCbK_-CLuHj1VrPzWBm37f9w_NyytxlmNs",
+          authDomain: "im-sharp.firebaseapp.com",
+          databaseURL: "https://im-sharp.firebaseio.com",
+          storageBucket: "im-sharp.appspot.com",
+          messagingSenderId: "496133993449"
+      };
+      firebase.initializeApp(config);
+  </script>
+
+</body>
+</html>
 

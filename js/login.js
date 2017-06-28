@@ -1,16 +1,10 @@
 /**
  * Created by alexandrupetru on 19/06/2017.
  */
-var app = angular.module("loginModule",["firebase","ngRoute"]);
-app.directive("login", function () {
-    return {
-        restrict:'E',
-        templateUrl:'login.html'
 
-    }
-});
+var app = angular.module("loginModule",["firebase","ngRoute","ngMaterial"]);
 
-app.controller("loginController",["$scope", "$window", "$firebaseObject","$firebaseArray","$firebaseAuth","$location", function($scope,$window, $firebaseObject,$firebaseArray, $firebaseAuth,$location,$mdLiveAnnouncer) {
+app.controller("loginController",["$scope", "$window", "$firebaseObject","$firebaseArray","$firebaseAuth","$location","$log", function($scope,$window, $firebaseObject,$firebaseArray, $firebaseAuth,$location,$log) {
     // download the data into a local object
     //$scope.data = $firebaseObject(ref);
     // putting a console.log here won't work, see below
@@ -18,7 +12,9 @@ app.controller("loginController",["$scope", "$window", "$firebaseObject","$fireb
 
     $scope.authObj.$onAuthStateChanged(function(firebaseUser) {
         if (firebaseUser) {
-            $location.path('mainpage.html');
+            var url = "http://" + $window.location.host + "/HabitsFormerAngularMaterial/mainpage.html";
+            $log.log(url);
+            $window.location.href = url;
         }
         else {
 
@@ -28,10 +24,9 @@ app.controller("loginController",["$scope", "$window", "$firebaseObject","$fireb
     $scope.Login=function(){
         try{
             $scope.authObj.$signInWithEmailAndPassword($scope.email, $scope.password)
-                .then(function(firebaseUser) {
-                    console.log($scope.authObj.$getAuth())
-                    $location.path('mainpage.html');
-                    $mdLiveAnnouncer.announce('Hey Alex');
+                .then(function() {
+                    console.log($scope.authObj.$getAuth());
+
                 })
                 .catch(function(error) {
                     console.log(error.message);
@@ -61,9 +56,8 @@ app.controller("loginController",["$scope", "$window", "$firebaseObject","$fireb
                 swal("Error", "Login failes", "error");
             }
         }
-    }
+    };
 
 
 }]);
-
 

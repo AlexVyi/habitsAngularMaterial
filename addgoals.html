@@ -1,0 +1,61 @@
+
+
+
+
+<div class="row tab AddGoals">
+    <div class="col-xs-12  col-lg-6 col-lg-offset-3">
+        <div class="panel panel-info" id="addGoals"  style="background-image: url('CSS/Img/21.png');background-position: center;background-size: cover;">
+            <div class="panel-heading">
+                <h2>Add Goal</h2>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <form  id="AddGoal" novalidate>
+                        <div class="inputGroup">
+                            <p class="form-control-static" style="font-size: 27px;">Type</p>
+                            <select id="Type" class="form-control" ng-model="newGoal.goalType" ng-init="newGoal.goalType = 'Dont'">
+                                <option value="Dont">Dont</option>
+                                <option value="Daily">Daily</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Monthly">Monthly</option>
+                            </select>
+                        </div>
+
+                        <p class="form-control-static" style="font-size: 27px;">Title</p>
+                        <div class="input-group">
+                            <label for="Title" class="sr-only">Title</label>
+                            <span class="input-group-addon"><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
+                            <input id="Title" class="form-control" type="text" ng-model="newGoal.title" maxlength="50" placeholder="Title">
+                        </div>
+
+                        <p class="form-control-static" ng-hide="newGoal.goalType !== 'Dont'" style="font-size: 27px;">Points</p>
+                        <div class="input-group" ng-model="newGoal" ng-hide="newGoal.goalType !== 'Dont'">
+                            <label for="Points" class="sr-only">Points</label>
+                            <span class="input-group-addon"><i class="fa fa-line-chart" aria-hidden="true"></i></span>
+                            <input id="Points" class="form-control" type="number" ng-model="newGoal.points" max="-500" step="1" min="-1000000" placeholder="Points">
+                        </div>
+
+                        <p class="form-control-static" ng-hide="newGoal.goalType == 'Dont'" style="font-size: 27px;">Repeats</p>
+                        <div class="input-group" ng-model="newGoal" ng-hide="newGoal.goalType == 'Dont'">
+                            <label for="Repeats" class="sr-only">Repeats</label>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-retweet"></span></span>
+                            <input id="Repeats" class="form-control" type="number" ng-model="newGoal.repeats" min="0" max="10000" step="1" placeholder="Repeats">
+                        </div>
+
+                        <div class="input-group input-group-lg" style="width:100%;">
+                            <p class="form-control-static" style="font-size: 27px;">Description</p>
+                            <i class="fa fa-desktop" aria-hidden="true"></i>
+                            <textarea id="Description" class="form-control" rows="4" type="text" ng-model="newGoal.description" maxlength="500"></textarea>
+                        </div>
+
+                        <button class="btn btn-lg btn btn-info" ng-click="AddGoal();tab.selectedTab('Home')" id="commitToGoal" style="margin-top:10px;">Commit to goal</button>
+                    </form>
+                </div>
+            </div>
+        </div><!--inchide panel default-->
+    </div>
+</div><!--ends row tab AddGoals-->
+
+
+
+

@@ -1,66 +1,7 @@
-<!doctype html>
-<html ng-app="HabitsFormer">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Habits Former</title>
-    <link rel="stylesheet" href="Plugins/angular-material/angular-material.css">
-    <link rel="stylesheet" href="CSS/main.css">
-    <link rel="stylesheet" href="CSS/login.css">
-</head>
-
-
-    <div ng-controller="RegisterController">
-        <h1>Welcome to Habitsformer</h1>
-        <h2> the platform to help you become the best you can be</h2>
-      </div>
-
-
-        <div>
-          <div>
-            <div>
-              <form>
-                <input placeholder="Name" type="text" ng-model="userName">
-                <input placeholder="Email" type="email" ng-model="email">
-                <input placeholder="Password" type="password" ng-model="password">
-                <input placeholder="Confirm password" type="password" ng-model="confirmPassword">
-                <div class="buttons">
-                  <button ng-click="Register()">Create account</button></br>
-                  <button ng-click="Switch(false)">Back to login</button></br>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
 
 
 
-  <script src="Plugins/angular/angular.min.js"></script>
-  <script src="Plugins/jquery/dist/jquery.min.js"></script>
-  <script src="Plugins/angular-route/angular-route.min.js"></script>
-  <script src="Plugins/firebase/firebase.js"></script>
-  <script src="Plugins/angularfire/dist/angularfire.min.js"></script>
-  <script src="Plugins/angular-animate/angular-animate.min.js"></script>
-  <script src="Plugins/angular-aria/angular-aria.min.js"></script>
-  <script src="Plugins/angular-material/angular-material.min.js"></script>
-  <script src="Js/app.js"></script>
-  <script src="Js/registerController.js"></script>
-  <script src="Js/login.js"></script>
-
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCbK_-CLuHj1VrPzWBm37f9w_NyytxlmNs",
-      authDomain: "im-sharp.firebaseapp.com",
-      databaseURL: "https://im-sharp.firebaseio.com",
-      storageBucket: "im-sharp.appspot.com",
-      messagingSenderId: "496133993449"
-    };
-    firebase.initializeApp(config);
 
 
 
-  </script>
-</html>
+

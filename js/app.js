@@ -3,6 +3,8 @@
  */
 (function() {
     'use strict';
-  angular.module("habits", ["mainmodule","loginModule","firebase", "ngMaterial","ngRoute"]);
+  angular.module("habits", ["mainModule","loginModule","directiveModule","tabsModule","firebase", "ngMaterial","ngRoute"]);
+
+
 
 })()

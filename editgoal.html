@@ -1,0 +1,72 @@
+<div class="row tab EditGoal" style="width: 100%;">
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+        <div class="panel panel-info" style="background-color: transparent;background-image: url('CSS/Img/21.png');background-position: center;background-size: cover;">
+            <div class="panel-heading">
+                <h2>Edit Goal</h2>
+            </div>
+            <div class="panel-body" style="background-color: transparent;">
+                <div class="form-group" style="background-color: transparent;">
+                    <form id="EditGoal" novalidate>
+                        <p class="form-control-static" style="font-size: 27px;">Type</p>
+                        <div class="input-group">
+                            <label for="TypeFromEdit" class="sr-only">Type</label>
+                            <span class="input-group-addon"><i class="fa fa-file" aria-hidden="true"></i></span>
+                            <input id="TypeFromEdit" type="text" ng-model="editGoal.goalType" maxlength="50" readonly class="form-control" placeholder="Type">
+                        </div>
+
+                        <p class="form-control-static" style="font-size: 27px;">Title</p>
+                        <div class="input-group">
+                            <label for="titleFromEdit" class="sr-only">Title</label>
+                            <span class="input-group-addon"><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
+                            <input id="titleFromEdit" type="text" ng-model="editGoal.title" maxlength="50" class="form-control" placeholder="Title">
+                        </div>
+
+                        <p class="form-control-static" ng-model="editGoal" ng-hide="editGoal.goalType !== 'Dont'" style="font-size: 27px;">Points</p>
+                        <div class="input-group" ng-model="editGoal" ng-hide="editGoal.goalType !== 'Dont'">
+                            <label for="pointsFromEdit" class="sr-only">Points</label>
+                            <span class="input-group-addon"><i class="fa fa-line-chart" aria-hidden="true"></i></span>
+                            <input id="pointsFromEdit" type="number" ng-model="editGoal.points" max="-500" step="1" min="-1000000" class="form-control" placeholder="Points">
+                        </div>
+
+                        <p class="form-control-static" ng-model="editGoal" ng-hide="editGoal.goalType === 'Dont'" style="font-size: 27px;">Repeats</p>
+                        <div class="input-group" ng-model="editGoal" ng-hide="editGoal.goalType === 'Dont'">
+                            <label for="repeatsFromEdit" class="sr-only">Repeats</label>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-retweet"></span></span>
+                            <input id="repeatsFromEdit" type="number" ng-model="editGoal.repeats" min="0" max="10000" step="1" class="form-control" placeholder="Repeats">
+                        </div>
+
+                        <p class="form-control-static" style="font-size: 27px;">Money</p>
+                        <div class="input-group" ng-model="editGoal">
+                            <label for="Money" class="sr-only">Money</label>
+                            <span class="input-group-addon"><i class="fa fa-cc-visa" aria-hidden="true"></i></span>
+                            <input id="Money" type="number" ng-model="editGoal.money" max="10" step="0.01" min="0" class="form-control" placeholder="Money" readonly>
+                        </div>
+
+                        <div class="input-group" style="width:100%;padding-top: 10px;">
+                            <p class="form-control-static" style="font-size: 27px;">Description</p>
+                            <i class="fa fa-desktop" aria-hidden="true"></i>
+                            <textarea id="descriptionFromEdit" class="form-control" rows="4" type="text" ng-model="editGoal.description" maxlength="500"></textarea>
+                        </div>
+
+                        <div class="input-group" style="padding-top: 10px;">
+                            <label for="password" class="sr-only">Password</label>
+                            <span class="input-group-addon"><i class="fa fa-unlock" aria-hidden="true"></i></span>
+                            <input id="password" type="password" ng-model="password" class="form-control" placeholder="Password">
+                        </div>
+
+                        <button class="btn btn-lg btn btn-info" ng-click="SaveChangesGoal(editGoal)" style="width:100%;margin-top: 10px;">Save changes</button>
+                        <button class="btn btn-lg btn btn-info" ng-click="RemoveGoal(editGoal)" style="width: 100%;margin-top: 10px;">Remove Goal</button>
+                        <button class="btn btn-lg btn btn-info" ng-click="tab.selectedTab('Home')" style="width: 100%;margin-top: 10px;">Cancel</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--ends row tab editGoal-->
+
+
+
+
+
+
