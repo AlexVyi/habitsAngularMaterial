@@ -12,7 +12,7 @@ app.controller("loginController",["$scope", "$window", "$firebaseObject","$fireb
 
     $scope.authObj.$onAuthStateChanged(function(firebaseUser) {
         if (firebaseUser) {
-            var url = "http://" + $window.location.host + "/HabitsFormerAngularMaterial/mainpage.html";
+            var url = "http://" + $window.location.host + "/habitsAngularMaterial/mainpage.html";
             $log.log(url);
             $window.location.href = url;
         }

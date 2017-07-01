@@ -44,14 +44,16 @@ app.directive("faq", function () {  //inject into main
 app.directive("editgoal", function () {  //inject into main
     return {
         restrict:'E',
-        templateUrl:'editgoal.html'
+        templateUrl:'editgoal.html',
+        scope:true
 
     }
 });
     app.directive("userholiday", function () {  //inject into main
         return {
             restrict: 'E',
-            templateUrl: 'userholiday.html'
+            templateUrl: 'userholiday.html',
+            scope:true
 
         }
     });

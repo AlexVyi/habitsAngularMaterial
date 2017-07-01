@@ -1,1 +1,1 @@
-var url="http:/localhost:63342/HabitsFormerAngularMaterial/";
+var url="http:/localhost:63342/habitsAngularMaterial/";

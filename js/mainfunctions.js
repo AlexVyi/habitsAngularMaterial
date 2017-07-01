@@ -39,7 +39,7 @@ app.controller("mainController",["$scope", "$interval", "$window", "$firebaseObj
             });
         }
         else {
-            var url = "http://" + $window.location.host + "/HabitsFormerAngularMaterial/index.html";
+            var url = "http://" + $window.location.host + "/habitsAngularMaterial/index.html";
             $log.log(url);
             $window.location.href = url;
         }
@@ -177,6 +177,7 @@ app.controller("mainController",["$scope", "$interval", "$window", "$firebaseObj
             default:
         }
         $scope.newGoal={};
+        $scope.tab.selectedTab('Home')
     }
     //ok, vad ca ai intrebat
     //fiecare goal e trimis in nodul care ii corespunde tipului sau (de aia switch)
@@ -188,7 +189,8 @@ app.controller("mainController",["$scope", "$interval", "$window", "$firebaseObj
     //tot ce fac aici ar fi mult mai eficent cu array-uri in loc de obiecte, dar nu sunt sigur ca functioneaza bindto
 
     $scope.EditGoal=function(goal){
-        console.log("test")
+        console.log("EditGoal invoked")
+
         $scope.editGoal=goal;
         switch ($scope.editGoal.goalType.toString()) {
             case "Dont":
@@ -208,11 +210,12 @@ app.controller("mainController",["$scope", "$interval", "$window", "$firebaseObj
                 $scope.editGoal.id=$scope.editGoal.goalType.toString()+(arr.indexOf(goal)-2);
                 break;
         }
+
     }
 
 
     $scope.SaveChangesGoal=function(editGoal){
-        console.log(editGoal)
+        console.log("SaveChangesGoal invoked")
         if(!editGoal.title){
            swal("Error", "Please add a title", "error");
             return
@@ -222,7 +225,7 @@ app.controller("mainController",["$scope", "$interval", "$window", "$firebaseObj
             return
         }
         if(editGoal.goalType.toString()==="Dont"){
-            if (!$scope.newGoal.points || $scope.newGoal.points>0){
+            if (!$scope.editGoal.points || $scope.editGoal.points>0){
 
                swal("Error", "Please add points (a negative number smaller than -500)", "error");
                 return
@@ -359,14 +362,16 @@ app.controller("mainController",["$scope", "$interval", "$window", "$firebaseObj
         try{
             $scope.authObj.$signInWithEmailAndPassword($scope.user.email, $scope.editUser.acutalPsw)
                 .then(function(firebaseUser) {
-                    if ($scope.user.userName!=$scope.editUser.userName){
+                    if ($scope.user.userName!==$scope.editUser.userName){
                        swal("Success!", "Name changed successfully!", "success")
+                        $scope.tab.selectedTab('Home')
                     }
                     $scope.user.userName=$scope.editUser.userName;
                     if ($scope.editUser.newPsw){
                         if($scope.editUser.newPsw ===$scope.editUser.confNewPsw){
                             $scope.authObj.$updatePassword($scope.editUser.newPsw).then(function() {
                                swal("Success!", "Password changed successfully!", "success")
+                                $scope.tab.selectedTab('Home')
                             }).catch(function(error) {
                                swal("Error", "Password change failed", "error");
                             });
@@ -380,6 +385,7 @@ app.controller("mainController",["$scope", "$interval", "$window", "$firebaseObj
                         $scope.authObj.$updateEmail($scope.editUser.email).then(function() {
                             $scope.user.email=$scope.editUser.email;
                            swal("Success!", "Email changed successfully!", "success")
+                            $scope.tab.selectedTab('Home')
                         }).catch(function(error) {
                            swal("Error", "Email change failed", "error");
                         });
