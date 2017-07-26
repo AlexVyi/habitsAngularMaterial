@@ -6,5 +6,4 @@
   angular.module("habits", ["mainModule","loginModule","directiveModule","tabsModule","firebase", "ngMaterial","ngRoute"]);
 
 
-
-})()
+})();

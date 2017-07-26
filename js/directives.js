@@ -57,6 +57,24 @@ app.directive("editgoal", function () {  //inject into main
 
         }
     });
+app.directive("resetpass", function () {  //inject into main
+    return {
+        restrict: 'EA',
+        templateUrl: 'resetPassword.html',
+        scope:true
+
+    }
+});
+app.directive("register", function () {  //inject into main
+    return {
+        restrict: 'EA',
+        templateUrl: 'register.html',
+        scope:true
+
+    }
+});
+
+
 
 
 

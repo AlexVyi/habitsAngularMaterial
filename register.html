@@ -1,6 +1,25 @@
 
 
 
+<h1>Register</h1>
+
+<div ng-controller="registerController">
+    <div id="wrapper" style="text-align: center">
+        <div style="display: inline-block;">
+            <form style="text-align:center" id="RegisterForm" >
+                <input placeholder="Name" type="text" ng-model="userName">
+                <input placeholder="Email" type="email" ng-model="email">
+                <input placeholder="Password" type="password" ng-model="password">
+                <input placeholder="Confirm password" type="password" ng-model="confirmPassword">
+                <div class="buttons">
+                    <button style="display:inline-block" ng-click="Register()">Create account</button></br>
+                    <button style="display:inline-block" onclick="Switch('Login')">Back to login</button></br>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 
 

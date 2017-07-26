@@ -13,4 +13,11 @@ app.controller("tabController",function () {
     this.isSelected = function (checkTab) {
         return this.tab === checkTab
     }
-})
+});
+
+app.controller('Controller', ['$scope', function($scope) {
+
+    $scope.showRegister = function(){
+        $scope.templateURL = 'register.html';
+    };
+}]);

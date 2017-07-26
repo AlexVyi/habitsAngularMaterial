@@ -621,3 +621,79 @@ app.filter('numberFixedLen', function () {
         return(1e4+""+a).slice(-b);
     };
 });
+app.controller("ResetPasswordController",["$scope", "$window", "$firebaseObject","$firebaseArray","$firebaseAuth", function($scope,$window, $firebaseObject,$firebaseArray, $firebaseAuth) {
+    // download the data into a local object
+    //$scope.data = $firebaseObject(ref);
+    // putting a console.log here won't work, see below
+    $scope.authObj = $firebaseAuth();
+
+    $scope.authObj.$onAuthStateChanged(function(firebaseUser) {
+        if (firebaseUser) {
+            $window.location.href+="MainPage.html";
+        }
+        else {
+
+        }
+    });
+
+    $scope.ResetPassword=function(){
+        try{
+            $scope.authObj.$sendPasswordResetEmail($scope.email).then(function() {
+                swal("Success!", "Password reset email sent successfully!", "success")
+            }).catch(function(error) {
+                console.log(error.message);
+                if(error.message==="There is no user record corresponding to this identifier. The user may have been deleted."){
+                    swal("Error", "There is no user with this email.", "error");
+                }
+                else{
+                    swal("Error", "Email not sent. Please try again", "error");
+                }
+            });
+        }
+        catch(err){
+            console.log(err.message)
+            if(err.message==="sendPasswordResetEmail failed: First argument \"email\" must be a valid string."){
+                swal("Error", "Please write your email address", "error");
+            }
+            else{
+                swal("Error", "Email not sent. Please try again", "error");
+            }
+
+        }
+    }
+
+}]);
+app.controller("registerController",["$scope", "$window", "$firebaseObject","$firebaseArray","$firebaseAuth", function($scope,$window, $firebaseObject,$firebaseArray, $firebaseAuth) {
+    // download the data into a local object
+    //$scope.data = $firebaseObject(ref);
+    // putting a console.log here won't work, see below
+    $scope.authObj = $firebaseAuth();
+
+
+    $scope.Register=function(){
+        if($scope.password!==$scope.confirmPassword){
+            return;
+        }
+        $scope.authObj.$createUserWithEmailAndPassword($scope.email, $scope.password)
+            .then(function(firebaseUser) {
+
+                var ref = firebase.database().ref("users/"+firebaseUser.uid);
+                var firebaseObj= $firebaseObject(ref)
+                firebaseObj.email=$scope.email
+                firebaseObj.userName=$scope.userName;
+                firebaseObj.points=0;
+                firebaseObj.level=1;
+
+
+                firebaseObj.$save().then(function(ref) {
+                    $window.location.href="http://localhost:63342/HabitsFormerAngularMaterial/MainPage.html";
+                }, function(error) {
+                    console.log("Error:", error);
+                });
+            })
+            .catch(function(error) {
+                console.error("Authentication failed:", error);
+            });
+    }
+}]);
+
