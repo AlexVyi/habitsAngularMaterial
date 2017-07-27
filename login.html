@@ -2,34 +2,5 @@
 
 
 
-        <md-toolbar layout-padding >
-                <div layout="row">
-                     <h1>Welcome to Habitsformer</h1>
-                </div>
-                <div layout="row">
-                     <h2> the platform to help you become the best you can be</h2>
-                </div>
-
-
-        </md-toolbar>
-
-        <div layout="row" layout-padding ng-controller="Controller">
-
-                <form>
-                    <md-input-container>
-                        <input  placeholder="Email" flex type="email" ng-model="email">
-                    </md-input-container>
-                    <md-input-container>
-                        <input placeholder="Password" flex type="password" ng-model="password">
-                    </md-input-container>
-                    <div layout-padding>
-                        <md-button class="md-accent md-raised" ng-click="Login()">Login</md-button></br>
-                        <md-button class="md-accent md-raised" ng-click="showRegister()">Register</md-button></br>
-                    </div>
-                </form>
-
-                <div ng-include="templateURL"></div>
-
-        </div>
 
 

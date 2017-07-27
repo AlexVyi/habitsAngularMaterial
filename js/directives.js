@@ -5,14 +5,6 @@
 var app = angular.module("directiveModule",[]);
 
 
-app.directive("login", function () {  //loginpage
-    return {
-        restrict:'E',
-        templateUrl:'login.html'
-
-    }
-});
-
 app.directive("home", function () {  //inject into main
     return {
         restrict:'E',

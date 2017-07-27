@@ -672,6 +672,7 @@ app.controller("registerController",["$scope", "$window", "$firebaseObject","$fi
 
     $scope.Register=function(){
         if($scope.password!==$scope.confirmPassword){
+            swal('err')
             return;
         }
         $scope.authObj.$createUserWithEmailAndPassword($scope.email, $scope.password)
