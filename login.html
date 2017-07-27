@@ -13,7 +13,7 @@
 
         </md-toolbar>
 
-        <div layout="row" layout-padding ng-controller="Controller">
+        <div layout="row" layout-padding >
 
                 <form>
                     <md-input-container>
@@ -22,13 +22,15 @@
                     <md-input-container>
                         <input placeholder="Password" flex type="password" ng-model="password">
                     </md-input-container>
-                    <div layout-padding>
+                    <div layout-padding ng-controller="Controller">
                         <md-button class="md-accent md-raised" ng-click="Login()">Login</md-button></br>
-                        <md-button class="md-accent md-raised" ng-click="showRegister()">Register</md-button></br>
+                        <md-button class="md-accent md-raised" ng-click="toggleStage1()">Register</md-button></br>
+                        <md-button class="md-accent md-raised" ng-click="toggleStage()">Forgot Password</md-button></br>
                     </div>
                 </form>
 
-                <div ng-include="templateURL"></div>
+            <div class="resetpass"></div>
+            <div class="register"></div>
 
         </div>
 

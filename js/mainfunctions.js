@@ -697,3 +697,4 @@ app.controller("registerController",["$scope", "$window", "$firebaseObject","$fi
     }
 }]);
 
+

@@ -7,7 +7,7 @@ var app = angular.module("directiveModule",[]);
 
 app.directive("login", function () {  //loginpage
     return {
-        restrict:'E',
+        restrict:'EA',
         templateUrl:'login.html'
 
     }
@@ -57,23 +57,27 @@ app.directive("editgoal", function () {  //inject into main
 
         }
     });
-app.directive("resetpass", function () {  //inject into main
-    return {
-        restrict: 'EA',
-        templateUrl: 'resetPassword.html',
-        scope:true
 
-    }
-});
-app.directive("register", function () {  //inject into main
+
+app.directive('register', function(){
     return {
         restrict: 'EA',
+        controller:'registerController',
         templateUrl: 'register.html',
         scope:true
 
     }
 });
 
+app.directive('resetpass', function(){
+    return {
+        restrict: 'EA',
+        controller:'ResetPasswordController',
+        templateUrl: 'resetPassword.html',
+        scope:true
+
+    }
+});
 
 
 
