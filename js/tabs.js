@@ -20,4 +20,8 @@ app.controller('Controller', ['$scope', function($scope) {
     $scope.showRegister = function(){
         $scope.templateURL = 'register.html';
     };
+    $scope.showReset = function () {
+        $scope.templateURL = 'resetPassword.html';
+    };
+
 }]);
