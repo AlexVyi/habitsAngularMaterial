@@ -65,6 +65,14 @@ app.directive("register", function () {  //inject into main
 
     }
 });
+app.directive("login", function () {  //inject into main
+    return {
+        restrict: 'EA',
+        templateUrl: 'login.html',
+        scope:true
+
+    }
+});
 
 
 

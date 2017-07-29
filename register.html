@@ -3,22 +3,27 @@
 
 <h1>Register</h1>
 
-<div ng-controller="registerController">
-    <div id="wrapper" style="text-align: center">
-        <div style="display: inline-block;">
-            <form style="text-align:center" id="RegisterForm" >
+<div layout="row" layout-padding ng-controller="registerController">
+
+            <form >
+                <md-input-container>
                 <input placeholder="Name" type="text" ng-model="userName">
+                </md-input-container>
+                <md-input-container>
                 <input placeholder="Email" type="email" ng-model="email">
+                </md-input-container>
+                <md-input-container>
                 <input placeholder="Password" type="password" ng-model="password">
+                </md-input-container>
+                <md-input-container>
                 <input placeholder="Confirm password" type="password" ng-model="confirmPassword">
-                <div class="buttons">
-                    <button style="display:inline-block" ng-click="Register()">Create account</button></br>
-                    <button style="display:inline-block" onclick="Switch('Login')">Back to login</button></br>
+                </md-input-container>
+                <div layout-padding>
+                    <md-button class="md-accent md-raised" ng-click="Register()">Create account</md-button></br>
+                    <md-button class="md-accent md-raised" ng-click="showLogin()">Back to login</md-button>
                 </div>
             </form>
-        </div>
-    </div>
-</div>
+ </div>
 
 
 

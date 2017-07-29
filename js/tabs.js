@@ -19,9 +19,15 @@ app.controller('Controller', ['$scope', function($scope) {
 
     $scope.showRegister = function(){
         $scope.templateURL = 'register.html';
+        $scope.remove === true
     };
     $scope.showReset = function () {
         $scope.templateURL = 'resetPassword.html';
+        $scope.remove === true
+    };
+    $scope.showLogin = function () {
+        $scope.templateURL = 'login.html';
+        $scope.remove === true
     };
 
 }]);

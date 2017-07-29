@@ -689,10 +689,12 @@ app.controller("registerController",["$scope", "$window", "$firebaseObject","$fi
                 firebaseObj.$save().then(function(ref) {
                     $window.location.href="http://localhost:63342/HabitsFormerAngularMaterial/MainPage.html";
                 }, function(error) {
+                    swal('Err')
                     console.log("Error:", error);
                 });
             })
             .catch(function(error) {
+                swal('Err')
                 console.error("Authentication failed:", error);
             });
     }
