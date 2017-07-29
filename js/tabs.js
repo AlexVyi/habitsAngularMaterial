@@ -35,5 +35,19 @@ app.controller('Controller', ['$scope', function($scope) {
             return false;
         };
     };
+    $scope.showUserOnHoliday = function () {
+        $scope.templateURL = 'userholiday.html';
+        $scope.beenAdded = function(){
+            return false;
+        };
+    };
+    $scope.showAccount = function () {
+        $scope.templateUrl='account.html';
+        $scope.beenAdded = function(){
+            return false;
+        };
+    };
+
+
 
 }]);

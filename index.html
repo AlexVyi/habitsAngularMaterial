@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html ng-app="habits">
-  <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="description" content="">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-      <title>Habits Former</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Habits Former</title>
     <link rel="stylesheet" href="Plugins/angular-material/angular-material.css">
     <link rel="stylesheet" type="text/css" href="Plugins/sweetalert-master/dist/sweetalert.css">
-  </head>
-  <body>
+</head>
+<body>
 
 
-  <md-toolbar layout-padding >
-      <div layout="row">
-          <h1>Welcome to Habitsformer</h1>
-      </div>
-      <div layout="row">
-          <h2> the platform to help you become the best you can be</h2>
-      </div>
+<md-toolbar class="md-accent" layout-padding >
+    <div layout="row">
+        <h1>Welcome to Habitsformer</h1>
+    </div>
+    <div layout="row">
+        <h2> the platform to help you become the best you can be</h2>
+    </div>
 
-  </md-toolbar>
+</md-toolbar>
 
 
-  <div layout="row" layout-padding >
-          <div layout-padding ng-controller="Controller">
-              <md-button class="md-accent md-raised" ng-click="showLogin()" ng-hide="beenAdded(id) === false">Login</md-button></br>
-              <md-button class="md-accent md-raised" ng-click="showRegister()" ng-hide="beenAdded(id) === false">Register</md-button></br>
-              <md-button class="md-accent md-raised" ng-click="showReset()" ng-hide="beenAdded(id) === false">Forgot Password</md-button></br>
+<div layout="row" layout-padding >
+    <div layout-padding ng-controller="Controller">
+        <md-button class="md-accent md-raised" ng-click="showLogin()" ng-hide="beenAdded(id) === false">Login</md-button></br>
+        <md-button class="md-accent md-raised" ng-click="showRegister()" ng-hide="beenAdded(id) === false">Register</md-button></br>
+        <md-button class="md-accent md-raised" ng-click="showReset()" ng-hide="beenAdded(id) === false">Forgot Password</md-button></br>
 
-            <div ng-include="templateURL"></div>
+        <div ng-include="templateURL"></div>
 
-          </div>
-  </div>
+    </div>
+</div>
 
 
 
@@ -67,17 +67,17 @@
 
 
 
-  <script>
+<script>
     //Initialize Firebase
     var config = {
-      apiKey: "AIzaSyCbK_-CLuHj1VrPzWBm37f9w_NyytxlmNs",
-      authDomain: "im-sharp.firebaseapp.com",
-      databaseURL: "https://im-sharp.firebaseio.com",
-      storageBucket: "im-sharp.appspot.com",
-      messagingSenderId: "496133993449"
+        apiKey: "AIzaSyCbK_-CLuHj1VrPzWBm37f9w_NyytxlmNs",
+        authDomain: "im-sharp.firebaseapp.com",
+        databaseURL: "https://im-sharp.firebaseio.com",
+        storageBucket: "im-sharp.appspot.com",
+        messagingSenderId: "496133993449"
     };
     firebase.initializeApp(config);
-  </script>
+</script>
 
-  </body>
+</body>
 </html>

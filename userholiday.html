@@ -1,11 +1,9 @@
 
-    <div class="container" style="margin-top: 20vh;">
-        <div class="row">
-            <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3">
-                <div class="panel panel-info">
+
+
                     <div class="panel-heading">
                         <h1 class="panel-title">Hi {{user.userName}}, you're on holiday</h1>
-                    </div>
+
                     <div class="panel-body">
                         <form id="EndHolidayForm">
                             <div class="input-group">
@@ -14,13 +12,11 @@
                             </div>
                         </form>
 
-                        <button class="btn btn-warning" ng-click="EndHolidayMode()" id="EndHolidayButton" style="margin-top: 15px">Click here to end</button>
+                        <button class="btn btn-warning" ng-click="EndHolidayMode();showAccount()">Click here to end</button>
 
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    </div>
+
 
 
 

@@ -41,7 +41,7 @@ app.directive("editgoal", function () {  //inject into main
 
     }
 });
-    app.directive("userholiday", function () {  //inject into main
+    app.directive("userholiday", function () {  //not necessar
         return {
             restrict: 'E',
             templateUrl: 'userholiday.html',
@@ -49,7 +49,7 @@ app.directive("editgoal", function () {  //inject into main
 
         }
     });
-app.directive("resetpass", function () {  //inject into main
+app.directive("resetpass", function () {  //not necessar
     return {
         restrict: 'EA',
         templateUrl: 'resetPassword.html',
@@ -57,7 +57,7 @@ app.directive("resetpass", function () {  //inject into main
 
     }
 });
-app.directive("register", function () {  //inject into main
+app.directive("register", function () {  //not necessar
     return {
         restrict: 'EA',
         templateUrl: 'register.html',

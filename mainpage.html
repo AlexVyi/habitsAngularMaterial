@@ -27,7 +27,7 @@
             <a href ng-click="tab.selectedTab('AddGoals')" >Add goals</a>
         </button>
 
-         <button id="logout">
+         <button>
              <a href ng-click="Logout()">Log out</a>
          </button>
 
@@ -46,9 +46,6 @@
       </div>
       <div ng-show="tab.isSelected('FAQ')">
           <faq ng-controller="mainController"></faq>
-      </div>
-      <div ng-show="user.onHoliday">
-          <userholiday ng-controller="mainController"></userholiday>
       </div>
 
   </section>
