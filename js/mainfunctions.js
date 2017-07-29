@@ -672,7 +672,6 @@ app.controller("registerController",["$scope", "$window", "$firebaseObject","$fi
 
     $scope.Register=function(){
         if($scope.password!==$scope.confirmPassword){
-            swal('err')
             return;
         }
         $scope.authObj.$createUserWithEmailAndPassword($scope.email, $scope.password)
@@ -687,14 +686,13 @@ app.controller("registerController",["$scope", "$window", "$firebaseObject","$fi
 
 
                 firebaseObj.$save().then(function(ref) {
-                    $window.location.href="http://localhost:63342/HabitsFormerAngularMaterial/MainPage.html";
+                    $window.location.href="mainpage.html";
                 }, function(error) {
-                    swal('Err')
                     console.log("Error:", error);
                 });
             })
             .catch(function(error) {
-                swal('Err')
+                swal('The email address is already in use by another account')
                 console.error("Authentication failed:", error);
             });
     }
