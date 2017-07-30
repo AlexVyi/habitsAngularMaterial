@@ -35,7 +35,7 @@ app.controller('Controller', ['$scope', function($scope) {
             return false;
         };
     };
-    /*$scope.showUserOnHoliday = function () {
+    $scope.showUserOnHoliday = function () {
         $scope.templateURL = 'userholiday.html';
         $scope.beenAdded = function(){
             return false;
@@ -46,7 +46,7 @@ app.controller('Controller', ['$scope', function($scope) {
         $scope.beenAdded = function(){
             return false;
         };
-    };*/
+    };
 
 
 
