@@ -36,12 +36,14 @@ app.controller('Controller', ['$scope', function($scope) {
         };
     };
     $scope.showUserOnHoliday = function () {
+        alert('test')
         $scope.templateURL = 'userholiday.html';
         $scope.beenAdded = function(){
-            return false;
+            return true;
         };
     };
     $scope.showAccount = function () {
+        alert('test')
         $scope.templateUrl='account.html';
         $scope.beenAdded = function(){
             return false;

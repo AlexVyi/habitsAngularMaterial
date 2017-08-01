@@ -5,8 +5,8 @@
 
 
 
+<div ng-controller="Controller" ng-hide="beenAdded() === false">
 
-<div>
     <h2>Account</h2>
         <form id="EditAccount" >
             <!--<div class="inputGroup">
@@ -48,14 +48,16 @@
                 <input id="Enter actual password" type="password" ng-model="editUser.acutalPsw" class="form-control" placeholder="Enter actual password"><br>
 
 
-            <button  ng-click="SaveAccountChanges()" >Save</button>
-            <button   ng-click="EnterHolidayMode()">Enter holiday mode</button>
-            <button  ng-click="DeleteAccount()">Delete Account</button>
-
         </form>
 
 
- </div>
+        <button  ng-click="SaveAccountChanges()" >Save</button>
+        <button   ng-click="showUserOnHoliday();EnterHolidayMode()">Enter holiday mode</button>
+        <button  ng-click="DeleteAccount()">Delete Account</button>
+        <div ng-include="templateURL"></div>
+    </div>
+
+
 
 
 

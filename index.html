@@ -25,9 +25,9 @@
 
 <div layout="row" layout-padding >
     <div layout-padding ng-controller="Controller">
-        <md-button class="md-accent md-raised" ng-click="showLogin()" ng-hide="beenAdded(id) === false">Login</md-button></br>
-        <md-button class="md-accent md-raised" ng-click="showRegister()" ng-hide="beenAdded(id) === false">Register</md-button></br>
-        <md-button class="md-accent md-raised" ng-click="showReset()" ng-hide="beenAdded(id) === false">Forgot Password</md-button></br>
+        <md-button class="md-accent md-raised" ng-click="showLogin()" ng-hide="beenAdded() === false">Login</md-button></br>
+        <md-button class="md-accent md-raised" ng-click="showRegister()" ng-hide="beenAdded() === false">Register</md-button></br>
+        <md-button class="md-accent md-raised" ng-click="showReset()" ng-hide="beenAdded() === false">Forgot Password</md-button></br>
 
         <div ng-include="templateURL"></div>
 

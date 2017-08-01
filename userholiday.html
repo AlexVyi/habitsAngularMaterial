@@ -1,7 +1,8 @@
 
 
 
-
+<div ng-controller="mainController">
+    <div ng-controller="Controller" ng-show="beenAdded() === true">
                         <h1 class="panel-title">Hi {{user.userName}}, you're on holiday</h1>
 
 
@@ -12,11 +13,11 @@
                             </div>
                         </form>
 
-                        <button  ng-click="EndHolidayMode()">Click here to end</button>
+                        <button  ng-click="EndHolidayMode();showAccount()">Click here to end</button>
 
 
+</div>
 
-
-
+</div>
 
 

@@ -41,7 +41,7 @@ app.directive("editgoal", function () {  //inject into main
 
     }
 });
-    app.directive("userholiday", function () {  //not necessar
+/*app.directive("userholiday", function () {
         return {
             restrict: 'E',
             templateUrl: 'userholiday.html',
@@ -65,14 +65,14 @@ app.directive("register", function () {  //not necessar
 
     }
 });
-app.directive("login", function () {  //inject into main
+app.directive("login", function () {   //not necessar
     return {
         restrict: 'EA',
         templateUrl: 'login.html',
         scope:true
 
     }
-});
+});*/
 
 
 
