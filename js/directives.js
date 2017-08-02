@@ -53,7 +53,7 @@ app.directive("resetpass", function () {  //not necessar
     return {
         restrict: 'EA',
         templateUrl: 'resetPassword.html',
-        scope:true
+        scope:true//inherit the scope from parent
 
     }
 });

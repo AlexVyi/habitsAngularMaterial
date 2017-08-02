@@ -1,5 +1,8 @@
 /**
  * Created by alexandrupetru on 22/06/2017.
+ * I use two tipes of switching between the windows.tabController is used for navigation inside the app
+ * and the simple Controller to switch between register,login and reset password from the landing page.
+ * this way I avoid colision between scopes and elements.they are both attached to the tab module.
  */
 var app  = angular.module("tabsModule",[]);
 
@@ -18,8 +21,8 @@ app.controller("tabController",function () {
 app.controller('Controller', ['$scope', function($scope) {
 
     $scope.showRegister = function(){
-        $scope.templateURL = 'register.html';
-        $scope.beenAdded = function(){
+        $scope.templateURL = 'register.html';//another way of displaying newly created html elements and corespondent pages/snippets.
+        $scope.beenAdded = function(){//controls the ng-hide from landing.
             return false;
         };
     };
@@ -46,7 +49,9 @@ app.controller('Controller', ['$scope', function($scope) {
         $scope.beenAdded = function(){
             return false;
         };
-    };*/
+    };
+
+    here tried to use the same controller for the navigation inside the account tab but failed*/
 
 
 

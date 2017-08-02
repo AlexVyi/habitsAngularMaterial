@@ -14,3 +14,4 @@
 
     })
 })();
+/*here find all the modules and the theme provider*/

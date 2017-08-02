@@ -3,7 +3,7 @@
  */
 
 var app = angular.module("loginModule",["firebase","ngRoute","ngMaterial","tabsModule"]);
-//tabModule is here for the showing of register and resetpass.included the controller in the tabsModule.
+//tabModule is here for the purpose of displaying register and resetpass.included their controller in the tabsModule.
 
 app.controller("loginController",["$scope", "$window", "$firebaseObject","$firebaseArray","$firebaseAuth","$location","$log", function($scope,$window, $firebaseObject,$firebaseArray, $firebaseAuth,$location,$log) {
     // download the data into a local object

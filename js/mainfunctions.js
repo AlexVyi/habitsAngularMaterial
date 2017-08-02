@@ -1,6 +1,6 @@
 var app = angular.module("mainModule",["firebase","ngRoute","ngMaterial","tabsModule"]);
 
-
+/*main module and all its dependecies.kind of a headache until you figure it out*/
 
 
 
@@ -364,7 +364,7 @@ app.controller("mainController",["$compile","$element","$scope", "$interval", "$
                 .then(function(firebaseUser) {
                     if ($scope.user.userName!==$scope.editUser.userName){
                        swal("Success!", "Name changed successfully!", "success")
-                        $scope.tab.selectedTab('Home')
+                        $scope.tab.selectedTab('Home')//tab is short for tabController everywhere in the app
                     }
                     $scope.user.userName=$scope.editUser.userName;
                     if ($scope.editUser.newPsw){
@@ -413,7 +413,7 @@ app.controller("mainController",["$compile","$element","$scope", "$interval", "$
     }
 
     $scope.EnterHolidayMode=function($compile, $element){
-        var childScope;
+        var childScope;//initialise childScope
         try{
             $scope.authObj.$signInWithEmailAndPassword($scope.user.email, $scope.editUser.acutalPsw)
                 .then(function() {
@@ -431,9 +431,9 @@ app.controller("mainController",["$compile","$element","$scope", "$interval", "$
                         function(isConfirm){
                             if (isConfirm) {
                                swal("Have fun during holiday!", "Holiday mode entered succesfully. We hope to see you again soon", "success");
-                                childScope = $scope.$new();
-                                childScope.$destroy();
-                                $('account').empty();
+                                childScope = $scope.$new();//give it a new scope
+                                childScope.$destroy();//give it the method for completely removing the element from the dom.avoid this way any bugs.
+                                $('account').empty();//start working with it
                                 $('addgoals').empty();
                                 $('faq').empty();
                                 $('home').empty();
@@ -460,14 +460,14 @@ app.controller("mainController",["$compile","$element","$scope", "$interval", "$
     }
 
     $scope.EndHolidayMode=function(){
-        var childScope;
+        var childScope;//initialise childScope again.no global variabiles are allowed
         try{
             $scope.authObj.$signInWithEmailAndPassword($scope.user.email, $scope.password)
                 .then(function(firebaseUser) {
 
                     childScope = $scope.$new();
-                    var compiledDirective = $compile('<home></home>');
-                    var directiveElement = compiledDirective(childScope);
+                    var compiledDirective = $compile('<home></home>');//save the compile object for directives into a var with the desired directive
+                    var directiveElement = compiledDirective(childScope);//give it childScope to work with and save it into another var
                     $('home').append(directiveElement);
 
                     childScope = $scope.$new();
