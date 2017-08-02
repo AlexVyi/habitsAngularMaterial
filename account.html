@@ -8,54 +8,55 @@
 <div ng-controller="Controller" ng-hide="beenAdded() === false">
 
     <h2>Account</h2>
-        <form id="EditAccount" >
-            <!--<div class="inputGroup">
-              <h6>Id:</h6>
-              <input type="text" ng-model="editUser.uid" maxlength="50" readonly></input>
-            </div>-->
-            <p >User</p>
+    <form   >
+        <!--<div class="inputGroup">
+          <h6>Id:</h6>
+          <input type="text" ng-model="editUser.uid" maxlength="50" readonly></input>
+        </div>-->
+        <p >User</p>
 
-                <input id="user" type="text" ng-model="editUser.userName" class="form-control" placeholder="Enter your name" maxlength="50">
-
-
-            <p class="form-control-static" style="font-size: 27px;">Email</p>
-
-                <input id="email" type="text" ng-model="editUser.email" class="form-control" placeholder="Email" maxlength="50">
+        <input id="user" type="text" ng-model="editUser.userName" class="form-control" placeholder="Enter your name" maxlength="50">
 
 
-            <p class="form-control-static" style="font-size: 27px;">Level</p>
+        <p class="form-control-static" style="font-size: 27px;">Email</p>
 
-                <input id="Level" type="text" ng-model="editUser.level" class="form-control" placeholder="Level" readonly>
-
-
-            <p class="form-control-static" style="font-size: 27px;">Points</p>
-
-                <input id="PointsInAccount" type="text" ng-model="editUser.points" class="form-control" placeholder="Points" readonly>
+        <input id="email" type="text" ng-model="editUser.email" class="form-control" placeholder="Email" maxlength="50">
 
 
-            <p class="form-control-static" style="font-size: 27px;">New Password</p>
+        <p class="form-control-static" style="font-size: 27px;">Level</p>
 
-                <input id="New Password" type="password" ng-model="editUser.newPsw" class="form-control" placeholder="New password">
-
-
-            <p class="form-control-static" style="font-size: 27px;">Confirm new Password</p>
+        <input id="Level" type="text" ng-model="editUser.level" class="form-control" placeholder="Level" readonly>
 
 
-                <input id="Confirm new Password" type="password" ng-model="editUser.confNewPsw" class="form-control" placeholder="Confirm new password">
+        <p class="form-control-static" style="font-size: 27px;">Points</p>
 
-            <p class="form-control-static" style="font-size: 27px;">Current Password</p>
-
-                <input id="Enter actual password" type="password" ng-model="editUser.acutalPsw" class="form-control" placeholder="Enter actual password"><br>
+        <input id="PointsInAccount" type="text" ng-model="editUser.points" class="form-control" placeholder="Points" readonly>
 
 
-        </form>
+        <p class="form-control-static" style="font-size: 27px;">New Password</p>
+
+        <input id="New Password" type="password" ng-model="editUser.newPsw" class="form-control" placeholder="New password">
 
 
-        <button  ng-click="SaveAccountChanges()" >Save</button>
-        <button   ng-click="showUserOnHoliday();EnterHolidayMode()">Enter holiday mode</button>
-        <button  ng-click="DeleteAccount()">Delete Account</button>
-        <div ng-include="templateURL"></div>
-    </div>
+        <p class="form-control-static" style="font-size: 27px;">Confirm new Password</p>
+
+
+        <input id="Confirm new Password" type="password" ng-model="editUser.confNewPsw" class="form-control" placeholder="Confirm new password">
+
+        <p class="form-control-static" style="font-size: 27px;">Current Password</p>
+
+        <input id="Enter actual password" type="password" ng-model="editUser.acutalPsw" class="form-control" placeholder="Enter actual password"><br>
+
+
+    </form>
+
+    <button  ng-click="SaveAccountChanges()">Save</button>
+    <button   ng-click="showUserOnHoliday();EnterHolidayMode()">Enter holiday mode</button>
+    <button  ng-click="DeleteAccount()">Delete Account</button>
+    <div ng-include="templateURL"></div>
+
+</div>
+
 
 
 

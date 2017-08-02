@@ -1,8 +1,9 @@
 
 
 
-<div ng-controller="mainController">
-    <div ng-controller="Controller" ng-show="beenAdded() === true">
+
+    <div ng-controller="Controller" ng-hide="beenAdded() === false">
+        <div ng-controller="mainController">
                         <h1 class="panel-title">Hi {{user.userName}}, you're on holiday</h1>
 
 
