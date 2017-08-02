@@ -4,7 +4,7 @@ var app = angular.module("mainModule",["firebase","ngRoute","ngMaterial","tabsMo
 
 
 
-app.controller("mainController",["$scope", "$interval", "$window", "$firebaseObject","$firebaseArray","$firebaseAuth","$log" ,function($scope,  $interval, $window, $firebaseObject,$firebaseArray, $firebaseAuth,$log) {
+app.controller("mainController",["$compile","$element","$scope", "$interval", "$window", "$firebaseObject","$firebaseArray","$firebaseAuth","$log" ,function($compile, $element,$scope,  $interval, $window, $firebaseObject,$firebaseArray, $firebaseAuth,$log) {
     // download the data into a local object
     //$scope.data = $firebaseObject(ref);
     // putting a console.log here won't work, see below
@@ -412,7 +412,8 @@ app.controller("mainController",["$scope", "$interval", "$window", "$firebaseObj
         }
     }
 
-    $scope.EnterHolidayMode=function(){
+    $scope.EnterHolidayMode=function($compile, $element){
+        var childScope;
         try{
             $scope.authObj.$signInWithEmailAndPassword($scope.user.email, $scope.editUser.acutalPsw)
                 .then(function() {
@@ -429,7 +430,13 @@ app.controller("mainController",["$scope", "$interval", "$window", "$firebaseObj
                         },
                         function(isConfirm){
                             if (isConfirm) {
-                               swal("Have fun during holiday!", "Holiday mode entered succesfully. We hope to see you again soon", "success")
+                               swal("Have fun during holiday!", "Holiday mode entered succesfully. We hope to see you again soon", "success");
+                                childScope = $scope.$new();
+                                childScope.$destroy();
+                                $('account').empty();
+                                $('addgoals').empty();
+                                $('faq').empty();
+                                $('home').empty();
                                 $scope.user.onHoliday=true;
                             } else {
                                swal("Cancelled", "", "error");
@@ -453,9 +460,34 @@ app.controller("mainController",["$scope", "$interval", "$window", "$firebaseObj
     }
 
     $scope.EndHolidayMode=function(){
+        var childScope;
         try{
             $scope.authObj.$signInWithEmailAndPassword($scope.user.email, $scope.password)
                 .then(function(firebaseUser) {
+
+                    childScope = $scope.$new();
+                    var compiledDirective = $compile('<home></home>');
+                    var directiveElement = compiledDirective(childScope);
+                    $('home').append(directiveElement);
+
+                    childScope = $scope.$new();
+                    var compiledDirective = $compile('<account></account>');
+                    var directiveElement = compiledDirective(childScope);
+                    $('account').append(directiveElement);
+
+
+                    childScope = $scope.$new();
+                    var compiledDirective = $compile('<addgoals></addgoals>');
+                    var directiveElement = compiledDirective(childScope);
+                    $('addgoals').append(directiveElement);
+
+                    childScope = $scope.$new();
+                    var compiledDirective = $compile('<faq></faq>');
+                    var directiveElement = compiledDirective(childScope);
+                    $('faq').append(directiveElement);
+
+
+                    swal("Success", "Holiday mode exited successfully", "success");
                     $scope.user.onHoliday=false;
                     var arr = Object.keys($scope.dailys).map(function (key) { return $scope.dailys[key]; });
                     for (var i = 0; i < arr.length-2; i++) {
@@ -478,7 +510,7 @@ app.controller("mainController",["$scope", "$interval", "$window", "$firebaseObj
                        swal("Error", "Current password wrong", "error");
                     }
                     else{
-                       swal("Error", "Error while trying to enter holiday mode", "error");
+                       swal("Success", "Holiday mode exited successfully", "success");
                     }
                 });
         }
