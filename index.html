@@ -6,33 +6,38 @@
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>Habits Former</title>
+    <link href="https://material.io/color/#!/?view.left=0&view.right=0&primary.color=F9A825&secondary.color=3949AB&primary.text.color=F3E5F5&secondary.text.color=FCE4EC">
     <link rel="stylesheet" href="Plugins/angular-material/angular-material.css">
     <link rel="stylesheet" type="text/css" href="Plugins/sweetalert-master/dist/sweetalert.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
 
-<md-toolbar class="md-accent" layout-padding >
-    <div layout="row">
+
+    <md-toolbar layout="row" layout-padding>
         <h1>Welcome to Habitsformer</h1>
-    </div>
-    <div layout="row">
+        <md-card flex="25"><img src="img/begin.jpg" class="md-card-image" ></md-card>
+    </md-toolbar>
+    <md-toolbar class="md-warn" layout="column" flex layout-padding>
         <h2> the platform to help you become the best you can be</h2>
-    </div>
+    </md-toolbar>
 
-</md-toolbar>
-
-
-<div layout="row" layout-padding >
+<div layout="column" layout-align="start">
     <div layout-padding ng-controller="Controller">
-        <md-button class="md-accent md-raised" ng-click="showLogin()" ng-hide="beenAdded() === false">Login</md-button></br><!--tabsModule/Controller--->
-        <md-button class="md-accent md-raised" ng-click="showRegister()" ng-hide="beenAdded() === false">Register</md-button></br>
-        <md-button class="md-accent md-raised" ng-click="showReset()" ng-hide="beenAdded() === false">Forgot Password</md-button></br>
-
+        <md-button class="md-accent" ng-click="showLogin()" ng-hide="beenAdded() === false">Login</md-button></br><!--tabsModule/Controller--->
+        <md-button class="md-accent" ng-click="showRegister()" ng-hide="beenAdded() === false">Register</md-button></br>
+        <md-button class="md-accent" ng-click="showReset()" ng-hide="beenAdded() === false">Forgot Password</md-button></br>
         <div ng-include="templateURL"></div>
-
     </div>
 </div>
+ <div layout="row" layout-align="start" layout-margin="50px">
+         <fb:login-button size="large" scope="public_profile,email" onlogin="checkLoginState();" style="color:transparent;">Continue with Facebook</fb:login-button>
+ </div>
+
+
+        <md-card flex="25"><img src="img/firstStep.jpg" class="md-card-image"></md-card>
+        <md-card flex="25"><img src="img/jogg.jpg" class="md-card-image"></md-card>
 
 
 
@@ -43,6 +48,10 @@
 
 
 
+
+
+
+<script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1218512284931824";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
 <script src="Plugins/angular/angular.min.js"></script>
 <script src="Plugins/jquery/dist/jquery.min.js"></script>
 <script src="Plugins/angular-route/angular-route.min.js"></script>

@@ -414,23 +414,23 @@ app.controller("mainController",["$compile","$element","$scope", "$interval", "$
 
     $scope.EnterHolidayMode=function($compile, $element){
         var childScope;//initialise childScope
-        try{
-            $scope.authObj.$signInWithEmailAndPassword($scope.user.email, $scope.editUser.acutalPsw)
-                .then(function() {
-                   swal({
-                            title: "Are you sure you wish to enter holiday mode?",
-                            text: "",
-                            type: "warning",
-                            showCancelButton: true,
-                            confirmButtonColor: "#DD6B55",
-                            confirmButtonText: "Yes!",
-                            cancelButtonText: "No, cancel!",
-                            closeOnConfirm: false,
-                            closeOnCancel: false
-                        },
-                        function(isConfirm){
-                            if (isConfirm) {
-                               swal("Have fun during holiday!", "Holiday mode entered succesfully. We hope to see you again soon", "success");
+        swal({
+                title: "Are you sure you wish to enter holiday mode?",
+                text: "",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                    try{
+                        $scope.authObj.$signInWithEmailAndPassword($scope.user.email, $scope.editUser.acutalPsw)
+                            .then(function() {
+                                swal("Have fun during holiday!", "Holiday mode entered successfully. We hope to see you again soon", "success");
                                 childScope = $scope.$new();//give it a new scope
                                 childScope.$destroy();//give it the method for completely removing the element from the dom.avoid this way any bugs.
                                 $('account').empty();//start working with it
@@ -438,53 +438,53 @@ app.controller("mainController",["$compile","$element","$scope", "$interval", "$
                                 $('faq').empty();
                                 $('home').empty();
                                 $scope.user.onHoliday=true;
-                            } else {
-                               swal("Cancelled", "", "error");
-                            }
-                        });
-                })
-                .catch(function(error) {
-                    if(error.message==="The password is invalid or the user does not have a password."){
-                       swal("Error", "Current password wrong", "error");
+                            })
+                            .catch(function(error) {
+                                if(error.message==="The password is invalid or the user does not have a password."){
+                                    swal("Error", "Current password wrong", "error");
+                                }
+                                else{
+                                    swal("Error", "Error while trying to enter holiday mode", "error");
+                                }
+                            });
                     }
-                    else{
-                       swal("Error", "Error while trying to enter holiday mode", "error");
+                    catch(err){
+                        if(err.message==="signInWithEmailAndPassword failed: Second argument \"password\" must be a valid string."){
+                            swal("Error", "Please write your current password", "error");
+                        }
                     }
-                });
-        }
-        catch(err){
-            if(err.message==="signInWithEmailAndPassword failed: Second argument \"password\" must be a valid string."){
-               swal("Error", "Please write your current password", "error");
-            }
-        }
-    }
+                }
+                else {
+                    swal("Cancelled", "", "error");
+                }
+            });
 
+    }
     $scope.EndHolidayMode=function(){
         var childScope;//initialise childScope again.no global variabiles are allowed
         try{
             $scope.authObj.$signInWithEmailAndPassword($scope.user.email, $scope.password)
                 .then(function(firebaseUser) {
+                         childScope = $scope.$new();
+                         var compiledDirective = $compile('<home></home>');//save the compile object for directives into a var with the desired directive
+                         var directiveElement = compiledDirective(childScope);//give it childScope to work with and save it into another var
+                         $('home').append(directiveElement);
 
-                    childScope = $scope.$new();
-                    var compiledDirective = $compile('<home></home>');//save the compile object for directives into a var with the desired directive
-                    var directiveElement = compiledDirective(childScope);//give it childScope to work with and save it into another var
-                    $('home').append(directiveElement);
-
-                    childScope = $scope.$new();
-                    var compiledDirective = $compile('<account></account>');
-                    var directiveElement = compiledDirective(childScope);
-                    $('account').append(directiveElement);
+                         childScope = $scope.$new();
+                         var compiledDirective = $compile('<account></account>');
+                         var directiveElement = compiledDirective(childScope);
+                         $('account').append(directiveElement);
 
 
-                    childScope = $scope.$new();
-                    var compiledDirective = $compile('<addgoals></addgoals>');
-                    var directiveElement = compiledDirective(childScope);
-                    $('addgoals').append(directiveElement);
+                         childScope = $scope.$new();
+                         var compiledDirective = $compile('<addgoals></addgoals>');
+                         var directiveElement = compiledDirective(childScope);
+                         $('addgoals').append(directiveElement);
 
-                    childScope = $scope.$new();
-                    var compiledDirective = $compile('<faq></faq>');
-                    var directiveElement = compiledDirective(childScope);
-                    $('faq').append(directiveElement);
+                         childScope = $scope.$new();
+                         var compiledDirective = $compile('<faq></faq>');
+                         var directiveElement = compiledDirective(childScope);
+                         $('faq').append(directiveElement);
 
 
                     swal("Success", "Holiday mode exited successfully", "success");

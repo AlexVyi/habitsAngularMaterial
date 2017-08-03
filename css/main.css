@@ -1,6 +1,7 @@
-.hidden{
-    display: none;
+h2{
+    color:rgba(0,0,0,0.87);
+    text-align: center;
 }
-.active {
-    display: block;
+h1{
+    text-align: center;
 }

@@ -36,17 +36,17 @@
 
       <div ng-show="tab.isSelected('Home')"><!--if tab is selected, show it through directives which are creating the corespondent html elements.
       attach the proper controller to them.everything here is controlled by the tabController.mainController is rendundant,but for keeping it safe be it-->
-          <home ng-controller="mainController"></home>
+          <home ng-controller="mainController" ng-hide="user.onHoliday"></home>
       </div>
       <div  ng-show="tab.isSelected('Account')">
-          <account ng-controller="mainController"></account>
+          <account ng-controller="mainController" ng-hide="user.onHoliday"></account>
       </div>
 
       <div ng-show="tab.isSelected('AddGoals')">
-          <addgoals ng-controller="mainController"></addgoals>
+          <addgoals ng-controller="mainController" ng-hide="user.onHoliday"></addgoals>
       </div>
       <div ng-show="tab.isSelected('FAQ')">
-          <faq ng-controller="mainController"></faq>
+          <faq ng-controller="mainController" ng-hide="user.onHoliday"></faq>
       </div>
        <div ng-show="user.onHoliday">
            <userholiday ng-controller="mainController"></userholiday>

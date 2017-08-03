@@ -6,7 +6,7 @@
  */
 var app  = angular.module("tabsModule",[]);
 
-app.controller("tabController",function () {
+app.controller("tabController",function ($scope) {
     this.tab = "Home";
 
     this.selectedTab = function (setTab) {
@@ -16,6 +16,7 @@ app.controller("tabController",function () {
     this.isSelected = function (checkTab) {
         return this.tab === checkTab
     }
+
 });
 
 app.controller('Controller', ['$scope', function($scope) {

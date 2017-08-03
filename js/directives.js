@@ -37,7 +37,7 @@ app.directive("editgoal", function () {  //inject into main
     return {
         restrict:'E',
         templateUrl:'editgoal.html',
-        scope:true
+        scope:true//inherit the scope from parent
 
     }
 });
@@ -53,7 +53,7 @@ app.directive("resetpass", function () {  //not necessar
     return {
         restrict: 'EA',
         templateUrl: 'resetPassword.html',
-        scope:true//inherit the scope from parent
+        scope:true
 
     }
 });
