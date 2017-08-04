@@ -704,6 +704,7 @@ app.controller("registerController",["$scope", "$window", "$firebaseObject","$fi
 
     $scope.Register=function(){
         if($scope.password!==$scope.confirmPassword){
+            swal('Error','Fill in all the fields','error')
             return;
         }
         $scope.authObj.$createUserWithEmailAndPassword($scope.email, $scope.password)
@@ -720,7 +721,7 @@ app.controller("registerController",["$scope", "$window", "$firebaseObject","$fi
                 firebaseObj.$save().then(function(ref) {
                     $window.location.href="mainpage.html";
                 }, function(error) {
-                    console.log("Error:", error);
+                   swal('Error','Fill in all the fields','error')
                 });
             })
             .catch(function(error) {

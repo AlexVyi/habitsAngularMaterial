@@ -7,15 +7,16 @@
 var app  = angular.module("tabsModule",[]);
 
 app.controller("tabController",function ($scope) {
-    this.tab = "Home";
 
-    this.selectedTab = function (setTab) {
-        this.tab = setTab;
-    }
+        this.tab = "Home";
 
-    this.isSelected = function (checkTab) {
-        return this.tab === checkTab
-    }
+        this.selectedTab = function (setTab) {
+            this.tab = setTab;
+        }
+
+        this.isSelected = function (checkTab) {
+            return this.tab === checkTab
+        }
 
 });
 
