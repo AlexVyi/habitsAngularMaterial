@@ -11,38 +11,41 @@
     <link rel="stylesheet" type="text/css" href="Plugins/sweetalert-master/dist/sweetalert.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-<md-toolbar class="primary">
+
+<body md-theme="myAsewomeTheme">
 <div layout="row">
-    <div flex>
+
+        <md-card flex="33"><img src="img/begin.jpg" class="md-card-image"></md-card>
+        <md-card flex="33"><img src="img/extreme.jpg" class="md-card-image"></md-card>
+        <md-card flex="33"><img src="img/dance.jpg" class="md-card-image"></md-card>
+
+</div>
+<md-toolbar >
+    <div layout="row">
         <h1>Welcome to Habitsformer</h1>
-        <h2> the platform to help you become the best you can be</h2>
-        <div ng-controller="Controller">
-            <md-button class="md-accent" ng-click="showLogin()" ng-hide="beenAdded() === false">Login</md-button></br><!--tabsModule/Controller--->
-            <md-button class="md-accent" ng-click="showRegister()" ng-hide="beenAdded() === false">Register</md-button></br>
-            <md-button class="md-accent" ng-click="showReset()" ng-hide="beenAdded() === false">Forgot Password</md-button></br>
+        <h2 md-truncate flex> the platform that helps you become the best you can be</h2>
+    </div>
+
+    <div layout="row" style="min-height: 25vh">
+        <div flex class="md-toolbar-tools" ng-controller="Controller">
+            <md-button class="md-primary md-hue-2" ng-click="showLogin()" ng-hide="beenAdded() === false">Login</md-button></br><!--tabsModule/Controller--->
+            <md-button class="md-primary md-hue-2" ng-click="showRegister()" ng-hide="beenAdded() === false">Register</md-button></br>
+            <md-button class="md-primary md-hue-2" ng-click="showReset()" ng-hide="beenAdded() === false">Forgot Password</md-button></br>
 
             <div ng-include="templateURL"></div>
 
             <fb:login-button size="large" scope="public_profile,email" onlogin="checkLoginState();"
                              style="color:transparent;">Continue with Facebook
             </fb:login-button>
-
         </div>
-    </div>
-</div>
-    <div flex>
-        <md-card flex="33"><img src="img/start.png" class="md-card-image"></md-card>
+
     </div>
 </md-toolbar>
 
 
+
 <div layout="row">
-    <div flex>
-        <md-card flex="33"><img src="img/firstStep.jpg" class="md-card-image"></md-card>
-        <md-card flex="33"><img src="img/extreme.jpg" class="md-card-image"></md-card>
-        <md-card flex="33"><img src="img/dance.jpg" class="md-card-image"></md-card>
-    </div>
+
     <div flex>
         <md-card flex="33"><img src="img/jogg.jpg" class="md-card-image"></md-card>
         <md-card flex="33"><img src="img/savemoney.jpg" class="md-card-image"></md-card>

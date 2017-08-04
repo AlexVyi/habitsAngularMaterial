@@ -9,11 +9,13 @@
         $mdThemingProvider
             .theme('myAsewomeTheme')
             .primaryPalette('teal',{
-                'default': '400', // by default use shade 400 from the pink palette for primary intentions
-                'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
-                'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
-                'hue-3': 'A100' //
+                'default': '500', // by default use shade 500 from the teal palette for primary intentions
+                'hue-1': '900', // use shade 900 for the <code>md-hue-1</code> class
+                'hue-2': '700', // use shade 700 for the <code>md-hue-2</code> class
+                'hue-3': '100'
+
             })
+            .backgroundPalette('indigo')
             .accentPalette('indigo')
             .warnPalette('deep-orange');
 
