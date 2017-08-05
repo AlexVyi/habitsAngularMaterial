@@ -2,10 +2,10 @@
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600i,800" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 
-<div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row" ng-controller="loginController" >
+<div layout="column" ng-controller="loginController">
+<h1  md-colors="::{color:'primary'}">Login</h1>
 
-
-    <form class="md-toolbar-tools">
+    <form>
         <md-input-container>
             <input  placeholder="Email" flex type="email" ng-model="email">
         </md-input-container>

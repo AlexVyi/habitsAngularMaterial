@@ -6,8 +6,7 @@
  var app =  angular.module("habits", ["mainModule","loginModule","directiveModule","tabsModule","firebase", "ngMaterial","ngRoute"]);
 
     app.config(function ($mdThemingProvider) {
-        $mdThemingProvider
-            .theme('myAsewomeTheme')
+        $mdThemingProvider.theme('myAwesomeTheme')
             .primaryPalette('teal',{
                 'default': '500', // by default use shade 500 from the teal palette for primary intentions
                 'hue-1': '900', // use shade 900 for the <code>md-hue-1</code> class

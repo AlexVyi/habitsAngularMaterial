@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body md-theme="myAsewomeTheme" ng-cloak>
+<body md-theme="myAwesomeTheme" ng-cloak>
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
 
@@ -34,9 +34,9 @@
     </div>
 
 
-<div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row" layout-padding style="min-height: 250px">
+<div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row" layout-padding>
     <div id = "sideNavContainer" ng-controller="sideNavController as sNavCtrl">
-        <md-sidenav md-component-id="left" class="md-sidenav-left">
+        <md-sidenav md-component-id="left" class="md-sidenav-left" md-colors="{background:'myAwesomeTheme-accent-900-0.43'}">
 
             <div flex="75"  ng-controller="Controller">
                 <md-button class="md-primary md-hue-2" ng-click="showLogin()" ng-hide="beenAdded() === false">Login</md-button></br><!--tabsModule/Controller--->
@@ -51,7 +51,7 @@
             </div>
         </md-sidenav>
         <md-content>
-            <md-button ng-click = "openLeftMenu()">Open Left Menu</md-button>
+            <md-button class="md-accent md-hue-1" ng-click = "openLeftMenu()">Enter the VU</md-button>
         </md-content>
     </div>
 </div>
