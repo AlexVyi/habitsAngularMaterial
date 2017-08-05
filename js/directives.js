@@ -69,9 +69,9 @@ app.directive("login", function () {  //inject into main
     return {
         restrict: 'EA',
         templateUrl: 'login.html',
-        scope:true
-
+        scope: true
     }
+
 });
 
 

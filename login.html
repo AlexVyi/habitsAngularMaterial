@@ -2,9 +2,10 @@
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600i,800" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 
-<div layout="row" layout-padding ng-controller="loginController">
+<div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row" ng-controller="loginController" >
 
-    <form >
+
+    <form class="md-toolbar-tools">
         <md-input-container>
             <input  placeholder="Email" flex type="email" ng-model="email">
         </md-input-container>
@@ -12,14 +13,14 @@
             <input placeholder="Password" flex type="password" ng-model="password">
         </md-input-container>
         <div layout-padding>
-            <md-button class="md-accent" ng-click="Login()">Login</md-button></br>
-            <md-button class="md-accent" ng-click="showRegister()">Register</md-button></br>
-            <md-button class="md-accent" ng-click="showReset()">Forgot Password</md-button>
+            <md-button class="md-accent" ng-click="openLeftMenu();Login()">Login</md-button></br>
+            <md-button class="md-primary md-hue-2" ng-click="showRegister()"> Back to Register</md-button></br>
+            <md-button class="md-primary md-hue-2" ng-click="showReset()"> Back to Forgot Password</md-button>
 
         </div>
     </form>
+   </div>
 
-</div>
 
 
 

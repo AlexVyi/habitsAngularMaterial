@@ -22,6 +22,8 @@ app.controller("loginController",["$scope", "$window", "$firebaseObject","$fireb
         }
     });
 
+
+
     $scope.Login=function(){
         try{
             $scope.authObj.$signInWithEmailAndPassword($scope.email, $scope.password)

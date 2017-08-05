@@ -55,6 +55,13 @@ app.controller('Controller', ['$scope', function($scope) {
 
     here tried to use the same controller for the navigation inside the account tab but failed*/
 
-
-
 }]);
+app.controller('sideNavController', function sideNavController ($scope, $mdSidenav) {
+    $scope.openLeftMenu = function() {
+        $mdSidenav('left').toggle();
+    };
+
+    $scope.openRightMenu = function() {
+        $mdSidenav('right').toggle();
+    };
+})
