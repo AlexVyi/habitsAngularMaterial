@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <title>Habits Former</title>
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600i,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600italic,800" rel="stylesheet">
     <link rel="stylesheet" href="Plugins/angular-material/angular-material.css">
     <link rel="stylesheet" type="text/css" href="Plugins/sweetalert-master/dist/sweetalert.css">
     <link rel="stylesheet" href="css/main.css">
@@ -16,29 +16,31 @@
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
 
-        <md-card flex="33"><img src="img/begin.jpg" class="md-card-image"></md-card>
-        <md-card flex="33"><img src="img/extreme.jpg" class="md-card-image"></md-card>
-        <md-card flex="33"><img src="img/dance.jpg" class="md-card-image"></md-card>
+        <md-card><img src="img/begin.jpg" class="md-card-image">
+            <md-content style="font-family: Fira Sans,sans-serif;font-weight: 400">
+                “We are what we repeatedly do. Excellence, then, is not an act, but a habit.” — Aristotle
+            </md-content>
+        </md-card>
+        <md-card><img src="img/extreme.jpg" class="md-card-image"></md-card>
+        <md-card><img src="img/dance.jpg" class="md-card-image"></md-card>
 
 </div>
 
     <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
-        <md-toolbar flex="33" layout-align="center center">
-           <h1 class="md-headline"  layout-padding>Welcome to Habitsformer</h1>
+        <md-toolbar layout-align="center center">
+           <h1 class="md-headline">Welcome to Habitsformer</h1>
         </md-toolbar>
-        <md-toolbar flex="66" class="md-accent md-hue-1" layout-align="center center" layout-wrap>
-
-             <h2 class="md-title" layout-padding  layout-margin> the platform that helps you become the best you can be</h2>
-
+        <md-toolbar  class="md-accent md-hue-1" layout-align="center center">
+            <h2 class="md-title"> the platform that helps you become <md-divider md-inset>the best you can be</md-divider></h2>
         </md-toolbar>
     </div>
 
 
-<div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row" layout-padding>
-    <div id = "sideNavContainer" ng-controller="sideNavController as sNavCtrl">
-        <md-sidenav md-component-id="left" class="md-sidenav-left" md-colors="{background:'myAwesomeTheme-accent-900-0.43'}">
+<div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row" layout-padding layout-margin layout-align="center center">
+    <div id="sideNavContainer" ng-controller="sideNavController as sNavCtrl">
+        <md-sidenav md-component-id="left" class="md-sidenav-left" md-colors="{background:'myAwesomeTheme-accent-900-0.45'}">
 
-            <div flex="75"  ng-controller="Controller">
+            <div ng-controller="Controller" layout-padding layout-margin style="margin-top: 40%;margin-left:10%">
                 <md-button class="md-primary md-hue-2" ng-click="showLogin()" ng-hide="beenAdded() === false">Login</md-button></br><!--tabsModule/Controller--->
                 <md-button class="md-primary md-hue-2" ng-click="showRegister()" ng-hide="beenAdded() === false">Register</md-button></br>
                 <md-button class="md-primary md-hue-2" ng-click="showReset()" ng-hide="beenAdded() === false">Forgot Password</md-button></br>
@@ -46,10 +48,11 @@
                 <div ng-include="templateURL"></div>
 
                 <fb:login-button size="large" scope="public_profile,email" onlogin="checkLoginState();"
-                                 style="color:transparent;">Continue with Facebook
+                                 style="color:transparent;margin-left:25px">Continue with Facebook
                 </fb:login-button>
             </div>
         </md-sidenav>
+
         <md-content>
             <md-button class="md-accent md-hue-1" ng-click = "openLeftMenu()">Enter the VU</md-button>
         </md-content>
@@ -61,14 +64,14 @@
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
 <div flex>
-        <md-card flex="33"><img src="img/jogg.jpg" class="md-card-image"></md-card>
-        <md-card flex="33"><img src="img/savemoney.jpg" class="md-card-image"></md-card>
-        <md-card flex="33"><img src="img/thinkPlanBegin.jpg" class="md-card-image"></md-card>
+        <md-card><img src="img/jogg.jpg" class="md-card-image"></md-card>
+        <md-card><img src="img/savemoney.jpg" class="md-card-image"></md-card>
+        <md-card><img src="img/thinkPlanBegin.jpg" class="md-card-image"></md-card>
 </div>
     <div flex>
-        <md-card flex="33"><img src="img/visit.jpg" class="md-card-image"></md-card>
-        <md-card flex="33"><img src="img/drinkWater.jpg" class="md-card-image"></md-card>
-        <md-card flex="33"><img src="img/bakeSomething.jpg" class="md-card-image"></md-card>
+        <md-card><img src="img/visit.jpg" class="md-card-image"></md-card>
+        <md-card><img src="img/drinkWater.jpg" class="md-card-image"></md-card>
+        <md-card><img src="img/bakeSomething.jpg" class="md-card-image"></md-card>
     </div>
 </div>
 
