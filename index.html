@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes"/>
     <title>Habits Former</title>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600italic,800" rel="stylesheet">
     <link rel="stylesheet" href="Plugins/angular-material/angular-material.css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body md-theme="my2ndAwesomeTheme" ng-cloak md-colors="{background:'my2ndAwesomeTheme-background-900'}">
+<body md-theme="my2ndAwesomeTheme"  md-colors="{background:'my2ndAwesomeTheme-background-900'}" ng-cloak>
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
 
@@ -24,7 +24,9 @@
                 </md-card-title-text>
             </md-card-title>
         </md-card>
-        <md-card><img src="img/visit.jpg" class="md-card-image"></md-card>
+        <md-card><img src="img/visit.jpg" class="md-card-image">
+            <md-card-footer md-colors="::{color:'accent'}" class="md-headline"><h3>Visit the world!</h3></md-card-footer>
+        </md-card>
         <md-card><img src="img/dance.jpg" class="md-card-image"></md-card>
 
 </div>
@@ -56,9 +58,11 @@
             </div>
         </md-sidenav>
 
-        <md-content>
-            <md-button class="md-primary md-hue-1" ng-click = "openLeftMenu()">Enter the VU</md-button>
-        </md-content>
+
+            <md-button class="md-fab" ng-click="openLeftMenu()" aria-label="FAB">
+                <md-icon md-svg-src="Plugins/material-design-icons/navigation/svg/design/ic_menu_48px.svg"></md-icon>
+            </md-button>
+
     </div>
 </div>
 
