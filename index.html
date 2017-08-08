@@ -3,16 +3,22 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
+    <meta name="description" content="form good habits and drop bad ones">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes"/>
     <title>Habits Former</title>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600italic,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="Plugins/angular-material/angular-material.css">
     <link rel="stylesheet" type="text/css" href="Plugins/sweetalert-master/dist/sweetalert.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body md-theme="my2ndAwesomeTheme"  md-colors="{background:'my2ndAwesomeTheme-background-900'}" ng-cloak>
+
+<md-toolbar md-colors="{background:'myAwesomeTheme-primary-A100'}" style="height: 50vh;">
+    <md-truncate style="position: absolute; top: 13px; bottom: 13px;font-family: 'Pacifico', cursive;font-size: 50px">Hello
+    </md-truncate>
+</md-toolbar>
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
 
@@ -31,19 +37,19 @@
 
 </div>
 
-    <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
+<div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
         <md-toolbar layout-align="center center">
            <h1 class="md-headline">Welcome to Habitsformer</h1>
         </md-toolbar>
         <md-toolbar  class="md-accent" layout-align="center center">
             <h2 class="md-title"> the platform that helps you become <md-divider md-inset>the best you can be</md-divider></h2>
         </md-toolbar>
-    </div>
+</div>
 
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row" layout-padding layout-margin layout-align="center center">
     <div id="sideNavContainer" ng-controller="sideNavController as sNavCtrl">
-        <md-sidenav md-component-id="left" class="md-sidenav-left" md-colors="{background:'my2ndAwesomeTheme-accent-100-0.45'}">
+        <md-sidenav md-component-id="left" class="md-sidenav-left" md-colors="{background:'my2ndAwesomeTheme-accent-100-0.75'}">
 
             <div ng-controller="Controller" layout-padding layout-margin style="margin-top: 40%;margin-left:10%">
                 <md-button class="md-primary md-hue-2" ng-click="showLogin()" ng-hide="beenAdded() === false">Login</md-button></br><!--tabsModule/Controller--->
