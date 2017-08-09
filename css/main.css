@@ -5,7 +5,8 @@
     }
 }
 md-toolbar{
-    border-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 md-card.md-my2ndAwesomeTheme-theme{
     margin:0;
@@ -16,9 +17,13 @@ md-card.md-myAwesomeTheme-theme{
     border-radius: 5px;
 }
 md-card-title{
-    border-radius: 5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 md-card-footer{
     border-radius: 5px;
     font-family: Pacifico, cursive;
+}
+md-divider{
+    border:none;
 }

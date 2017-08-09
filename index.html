@@ -7,6 +7,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes"/>
     <title>Habits Former</title>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600italic,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="Plugins/angular-material/angular-material.css">
     <link rel="stylesheet" type="text/css" href="Plugins/sweetalert-master/dist/sweetalert.css">
@@ -39,9 +40,8 @@
             </md-button>
 
         </div>
-    </div>
-    <h1 class="md-headline" style="font-family: 'Pacifico', cursive;font-size: 19vw;text-align: center;color: antiquewhite">Hello
-    </h1>
+    </div><!--ends top navigation row-->
+       <h1 class="md-headline" style="font-family: 'Pacifico', cursive;font-size: 19vw;text-align: center;color: antiquewhite">Hello</h1>
 </md-toolbar>
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
@@ -55,19 +55,24 @@
 
 <div  layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
     <md-toolbar layout-align="center center" style="background-color:#EB6F32;height: 10vh">
-        <div class="md-title">D'ont</div>
+        <div class="md-title">Don't</div>
+        <div class="md-subhead" style="font-family: 'Montserrat', sans-serif;">Begin by dropping bad habits.<md-divider md-inset>Set some don'ts.</md-divider></div>
     </md-toolbar>
     <md-toolbar layout-align="center center" style="background-color:#FFC50A;height: 10vh">
         <div class="md-title">Daily</div>
+        <div class="md-subhead" style="font-family: 'Montserrat', sans-serif;">Set daily activities,like jogging.Those are the<md-divider md-inset> hardest to follow along.</md-divider></div>
     </md-toolbar>
 </div>
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
-    <md-toolbar layout-align="center center" style="background-color:#A3C777;height: 10vh">
+     <md-toolbar layout-align="center center" style="background-color:#A3C777;height: 10vh">
         <div class="md-title">Weekly</div>
+         <div class="md-subhead" style="font-family: 'Montserrat', sans-serif;">Set a weekly goal on top of a daily.See if<md-divider md-inset> that day kills you.</md-divider></div>
+
     </md-toolbar>
     <md-toolbar layout-align="center center" style="background-color:#7CB5C2;height: 10vh">
         <div class="md-title">Monthly</div>
+        <div class="md-subhead" style="font-family: 'Montserrat', sans-serif;">Once a month see what you are made of!<md-divider md-inset> That day can be a killer.</md-divider></div>
     </md-toolbar>
 </div>
 
@@ -100,7 +105,7 @@
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
         <md-card><img src="img/begin.jpg" class="md-card-image">
             <md-card-title  md-colors="{background:'my2ndAwesomeTheme-accent-500'}">
-                <md-card-title-text style="font-family: 'Pacifico', cursive">
+                <md-card-title-text style="font-family: 'Pacifico', cursive"><!--can be done simpler but used -title-text and -footer for learning purposes-->
                     <span class="md-title">“We are what we repeatedly do. Excellence, then, is not an act, but a habit.”</span>
                     <span class="md-subhead">Aristotle</span>
                 </md-card-title-text>
@@ -116,26 +121,26 @@
 </div>
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
-        <md-card><img src="img/jogg.jpg" class="md-card-image">
-            <md-card-footer>Jogg.Daily!</md-card-footer>
+        <md-card  md-colors="{background:'my2ndAwesomeTheme-background-300'}"><img src="img/jogg.jpg" class="md-card-image">
+            <md-card-footer>Jogg.Daily!No excuses!</md-card-footer>
         </md-card>
-        <md-card flex-gt-sm="35"><img src="img/savemoney.jpg" class="md-card-image">
+        <md-card flex-gt-sm="35" style="background-color:#7CB5C2"><img src="img/savemoney.jpg" class="md-card-image">
             <md-card-footer>Save money!Monthly.</md-card-footer>
         </md-card>
-        <md-card><img src="img/thinkPlanBegin.jpg" class="md-card-image">
+        <md-card md-colors="{background:'my2ndAwesomeTheme-background-500'}"><img src="img/thinkPlanBegin.jpg" class="md-card-image">
             <md-card-footer>Build your start-up.Everything you want is on the other side of fear!</md-card-footer>
         </md-card>
 </div>
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
 
-        <md-card><img src="img/extreme.jpg" class="md-card-image">
+        <md-card style="background-color:#FFC50A"><img src="img/extreme.jpg" class="md-card-image">
             <md-card-footer>Enjoy your body!In every way you can!</md-card-footer>
         </md-card>
         <md-card><img src="img/drinkWater.jpg" class="md-card-image">
             <md-card-footer>Drink water!</md-card-footer>
         </md-card>
-        <md-card><img src="img/bakeSomething.jpg" class="md-card-image">
+        <md-card style="background-color:#A3C777"><img src="img/bakeSomething.jpg" class="md-card-image">
             <md-card-footer>Bake something!</md-card-footer>
         </md-card>
 
