@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="habits" md-colors="{background:'my2ndAwesomeTheme-background-900'}">
+<html ng-app="habits" md-colors="{background:'my2ndAwesomeTheme-background-300'}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,46 +13,71 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body md-theme="my2ndAwesomeTheme"  md-colors="{background:'my2ndAwesomeTheme-background-900'}" ng-cloak>
+<body md-theme="my2ndAwesomeTheme"  md-colors="{background:'my2ndAwesomeTheme-background-300'}" ng-cloak><!--md-colors="{css selector:theme-primary/accent/warn/background-number}"-->
 
 <md-toolbar md-colors="{background:'myAwesomeTheme-primary-A100'}" style="height: 50vh;">
-    <md-truncate style="position: absolute; top: 13px; bottom: 13px;font-family: 'Pacifico', cursive;font-size: 50px">Hello
-    </md-truncate>
+    <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row" layout-padding layout-margin layout-align="center center">
+        <div id="sideNavContainer" ng-controller="sideNavController as sNavCtrl">
+            <md-sidenav md-component-id="right" class="md-sidenav-right" md-colors="{background:'my2ndAwesomeTheme-warn-300-0.75'}">
+
+                <div ng-controller="Controller" layout-padding layout-margin style="margin-left:10%">
+                    <md-button class="md-primary md-hue-2" ng-click="showLogin()" ng-hide="beenAdded() === false" style="padding-left: 0;margin-left: 0">Login</md-button></br><!--tabsModule/Controller--->
+                    <md-button class="md-primary md-hue-2" ng-click="showRegister()" ng-hide="beenAdded() === false">Register</md-button></br>
+                    <md-button class="md-primary md-hue-2" ng-click="showReset()" ng-hide="beenAdded() === false">Forgot Password</md-button></br>
+
+                    <div ng-include="templateURL"></div>
+
+                    <fb:login-button size="large" scope="public_profile,email" onlogin="checkLoginState();"
+                                     style="color:transparent;margin-left:20px">Continue with Facebook
+                    </fb:login-button>
+                </div>
+            </md-sidenav>
+
+
+            <md-button class="md-fab" ng-click="openRightMenu()" aria-label="FAB" style="margin-top: 45px;background-color: #7CB5C2">
+                <md-icon md-svg-src="Plugins/material-design-icons/navigation/svg/design/ic_menu_48px.svg"></md-icon>
+            </md-button>
+
+        </div>
+    </div>
+    <h1 class="md-headline" style="font-family: 'Pacifico', cursive;font-size: 19vw;text-align: center;color: antiquewhite">Hello
+    </h1>
 </md-toolbar>
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
+    <md-toolbar layout-align="center center">
+        <h1 class="md-headline" style="font-family: 'Pacifico', cursive">and welcome to <span style="color:#FFC50A">Habitsformer</span></h1>
+    </md-toolbar>
+    <md-toolbar  class="md-accent" layout-align="center center">
+        <h2 class="md-headline" style="font-family: 'Pacifico', cursive"> the platform that <span style="color:#EB6F32">helps you</span> become <md-divider md-inset>the best you can be</md-divider></h2>
+    </md-toolbar>
+</div>
 
-        <md-card><img src="img/begin.jpg" class="md-card-image">
-            <md-card-title  md-colors="{background:'my2ndAwesomeTheme-accent-500'}">
-                <md-card-title-text>
-                    <span class="md-headline">“We are what we repeatedly do. Excellence, then, is not an act, but a habit.”</span>
-                    <span class="md-subhead">Aristotle</span>
-                </md-card-title-text>
-            </md-card-title>
-        </md-card>
-        <md-card><img src="img/visit.jpg" class="md-card-image">
-            <md-card-footer md-colors="::{color:'accent'}" class="md-headline"><h3>Visit the world!</h3></md-card-footer>
-        </md-card>
-        <md-card><img src="img/dance.jpg" class="md-card-image"></md-card>
-
+<div  layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
+    <md-toolbar layout-align="center center" style="background-color:#EB6F32;height: 10vh">
+        <div class="md-title">D'ont</div>
+    </md-toolbar>
+    <md-toolbar layout-align="center center" style="background-color:#FFC50A;height: 10vh">
+        <div class="md-title">Daily</div>
+    </md-toolbar>
 </div>
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
-        <md-toolbar layout-align="center center">
-           <h1 class="md-headline">Welcome to Habitsformer</h1>
-        </md-toolbar>
-        <md-toolbar  class="md-accent" layout-align="center center">
-            <h2 class="md-title"> the platform that helps you become <md-divider md-inset>the best you can be</md-divider></h2>
-        </md-toolbar>
+    <md-toolbar layout-align="center center" style="background-color:#A3C777;height: 10vh">
+        <div class="md-title">Weekly</div>
+    </md-toolbar>
+    <md-toolbar layout-align="center center" style="background-color:#7CB5C2;height: 10vh">
+        <div class="md-title">Monthly</div>
+    </md-toolbar>
 </div>
 
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row" layout-padding layout-margin layout-align="center center">
     <div id="sideNavContainer" ng-controller="sideNavController as sNavCtrl">
-        <md-sidenav md-component-id="left" class="md-sidenav-left" md-colors="{background:'my2ndAwesomeTheme-accent-100-0.75'}">
+        <md-sidenav md-component-id="left" class="md-sidenav-left" md-colors="{background:'my2ndAwesomeTheme-warn-300-0.75'}">
 
             <div ng-controller="Controller" layout-padding layout-margin style="margin-top: 40%;margin-left:10%">
-                <md-button class="md-primary md-hue-2" ng-click="showLogin()" ng-hide="beenAdded() === false">Login</md-button></br><!--tabsModule/Controller--->
+                <md-button class="md-primary md-hue-2" ng-click="showLogin()" ng-hide="beenAdded() === false" style="padding-left: 0;margin-left: 0">Login</md-button></br><!--tabsModule/Controller--->
                 <md-button class="md-primary md-hue-2" ng-click="showRegister()" ng-hide="beenAdded() === false">Register</md-button></br>
                 <md-button class="md-primary md-hue-2" ng-click="showReset()" ng-hide="beenAdded() === false">Forgot Password</md-button></br>
 
@@ -65,27 +90,54 @@
         </md-sidenav>
 
 
-            <md-button class="md-fab" ng-click="openLeftMenu()" aria-label="FAB">
-                <md-icon md-svg-src="Plugins/material-design-icons/navigation/svg/design/ic_menu_48px.svg"></md-icon>
-            </md-button>
+        <md-button class="md-fab" ng-click="openLeftMenu()" aria-label="FAB">
+            <md-icon md-svg-src="Plugins/material-design-icons/navigation/svg/design/ic_menu_48px.svg"></md-icon>
+        </md-button>
 
     </div>
 </div>
 
+<div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
+        <md-card><img src="img/begin.jpg" class="md-card-image">
+            <md-card-title  md-colors="{background:'my2ndAwesomeTheme-accent-500'}">
+                <md-card-title-text style="font-family: 'Pacifico', cursive">
+                    <span class="md-title">“We are what we repeatedly do. Excellence, then, is not an act, but a habit.”</span>
+                    <span class="md-subhead">Aristotle</span>
+                </md-card-title-text>
+            </md-card-title>
+        </md-card>
+        <md-card><img src="img/visit.jpg" class="md-card-image">
+            <md-card-footer md-colors="::{color:'warn'}" class="md-headline" style="font-family: 'Pacifico', cursive">Visit the world!</md-card-footer>
+        </md-card>
+        <md-card style="background-color:#EB6F32"><img src="img/dance.jpg" class="md-card-image">
+            <md-card-footer>Dance.Even in your own living room</md-card-footer>
+        </md-card>
 
+</div>
 
+<div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
+        <md-card><img src="img/jogg.jpg" class="md-card-image">
+            <md-card-footer>Jogg.Daily!</md-card-footer>
+        </md-card>
+        <md-card flex-gt-sm="35"><img src="img/savemoney.jpg" class="md-card-image">
+            <md-card-footer>Save money!Monthly.</md-card-footer>
+        </md-card>
+        <md-card><img src="img/thinkPlanBegin.jpg" class="md-card-image">
+            <md-card-footer>Build your start-up.Everything you want is on the other side of fear!</md-card-footer>
+        </md-card>
+</div>
 
 <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
 
-        <md-card><img src="img/jogg.jpg" class="md-card-image"></md-card>
-        <md-card flex-gt-sm="35"><img src="img/savemoney.jpg" class="md-card-image"></md-card>
-        <md-card><img src="img/thinkPlanBegin.jpg" class="md-card-image"></md-card>
-</div>
-    <div layout-xs="column" layout-sm="column" layout-md="row" layout-lg="row" layout-xl="row">
-
-        <md-card><img src="img/extreme.jpg" class="md-card-image"></md-card>
-        <md-card><img src="img/drinkWater.jpg" class="md-card-image"></md-card>
-        <md-card><img src="img/bakeSomething.jpg" class="md-card-image"></md-card>
+        <md-card><img src="img/extreme.jpg" class="md-card-image">
+            <md-card-footer>Enjoy your body!In every way you can!</md-card-footer>
+        </md-card>
+        <md-card><img src="img/drinkWater.jpg" class="md-card-image">
+            <md-card-footer>Drink water!</md-card-footer>
+        </md-card>
+        <md-card><img src="img/bakeSomething.jpg" class="md-card-image">
+            <md-card-footer>Bake something!</md-card-footer>
+        </md-card>
 
 </div>
 

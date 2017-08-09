@@ -9,9 +9,16 @@ md-toolbar{
 }
 md-card.md-my2ndAwesomeTheme-theme{
     margin:0;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 md-card.md-myAwesomeTheme-theme{
     margin:0;
     border-radius: 5px;
+}
+md-card-title{
+    border-radius: 5px;
+}
+md-card-footer{
+    border-radius: 5px;
+    font-family: Pacifico, cursive;
 }
